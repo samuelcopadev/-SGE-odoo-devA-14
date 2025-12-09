@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="scf_incidencias.issues_tree" model="ir.ui.view">
+            <field name="name">scf.incidencias.issues.tree</field>
+            <field name="model">scf_incidencias.issues</field>
+            <field name="arch" type="xml">
+                <tree string="Incidencia">
+                    <field name="name"></field>
+                    <field name="description"></field>
+                    <field name="priority"></field>
+                    <field name="date_reported"></field>
+                    <field name="state"></field>
+
+                </tree>
+            </field>
+        </record>
+        <record id="scf_incidencias.issues_form" model="ir.ui.view">
+            <field name="name">scf.incidencias.issues.form</field>
+            <field name="model">scf_incidencias.issues</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name"></field>
+                            <field name="description"></field>
+                            <field name="priority"></field>
+                            <field name="date_reported"></field>
+                            <field name="state"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> 
+    </data>
+
+</odoo>
