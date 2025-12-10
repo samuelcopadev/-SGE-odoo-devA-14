@@ -24,6 +24,8 @@ Long description of module's purpose
     'data': [
         # 'security/ir.model.access.csv',
         'views/scf_incidencias_issues.xml',
+        'views/menus.xml',
+        'views/scf_incidencias_activos.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

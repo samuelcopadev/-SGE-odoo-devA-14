@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="activo_tree_view" model="ir.ui.view">
+            <field name="name">scf.incidencias.activo.tree</field>
+            <field name="model">scf_incidencias.activo</field>
+            <field name="arch" type="xml">
+                <tree string="Activos">
+                    <field name="name"/>
+                    <field name="category"/>
+                    <field name="model"/>
+                    <field name="serial_no"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="activo_form_view" model="ir.ui.view">
+            <field name="name">scf.incidencias.activo.form</field>
+            <field name="model">scf_incidencias.activo</field>
+            <field name="arch" type="xml">
+                <form string="Activo">
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Nombre del Equipo"/>
+                            <h1>
+                                <field name="name" placeholder="Ej: PC-DESPACHO-01"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="category"/>
+                                <field name="model"/>
+                            </group>
+                            <group>
+                                <field name="serial_no"/>
+                                <field name="purchase_date"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Notas">
+                                <field name="notes" placeholder="Escribe aquí cualquier observación sobre el equipo..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
