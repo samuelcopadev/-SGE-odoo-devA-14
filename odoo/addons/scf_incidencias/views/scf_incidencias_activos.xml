@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="activo_tree_view" model="ir.ui.view">
+        <record id="scf_incidencias.activo_tree" model="ir.ui.view">
             <field name="name">scf.incidencias.activo.tree</field>
             <field name="model">scf_incidencias.activo</field>
             <field name="arch" type="xml">
@@ -14,7 +14,7 @@
             </field>
         </record>
 
-        <record id="activo_form_view" model="ir.ui.view">
+        <record id="scf_incidencias.activo_form" model="ir.ui.view">
             <field name="name">scf.incidencias.activo.form</field>
             <field name="model">scf_incidencias.activo</field>
             <field name="arch" type="xml">

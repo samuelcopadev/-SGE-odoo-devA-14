@@ -25,7 +25,8 @@ Long description of module's purpose
         # 'security/ir.model.access.csv',
         'views/scf_incidencias_issues.xml',
         'views/menus.xml',
-        'views/scf_incidencias_activos.xml'
+        'views/scf_incidencias_activos.xml',
+        'views/scf_incidencias_intervenciones.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

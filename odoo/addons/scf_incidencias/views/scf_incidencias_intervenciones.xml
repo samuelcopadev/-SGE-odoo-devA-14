@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="scf_incidencias.intervenciones_tree" model="ir.ui.view">
+            <field name="name">scf.incidencias.intervenciones.tree</field>
+            <field name="model">scf_incidencias.intervenciones</field> <field name="arch" type="xml">
+                <tree string="Partes de Trabajo">
+                    <field name="date"/>
+                    <field name="name"/>
+                   <!-- <field name="user_id"/> --> 
+                    <field name="time_spent" sum="Total Horas"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="scf_incidencias.intervenciones_form" model="ir.ui.view">
+            <field name="name">scf.incidencias.intervenciones.form</field>
+            <field name="model">scf_incidencias.intervenciones</field> <field name="arch" type="xml">
+                <form string="Parte de Trabajo">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Resumen del trabajo..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                               <!--<field name="user_id"/>  --> 
+                            </group>
+                            <group>
+                                <field name="time_spent"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Detalles">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
