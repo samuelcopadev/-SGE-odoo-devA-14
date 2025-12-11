@@ -25,7 +25,7 @@
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" string="Nombre del Equipo"/>
                             <h1>
-                                <field name="name" placeholder="Ej: PC-DESPACHO-01"/>
+                                <field name="name" placeholder="Nombre del producto"/>
                             </h1>
                         </div>
 
