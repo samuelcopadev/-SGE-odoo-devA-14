@@ -25,7 +25,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="scf_incidencias.root_menu" name="Gestor Incidencias" sequence="1" />
+        <menuitem id="scf_incidencias.root_menu" name="Gestor de Incidencias" sequence="1" />
 
         <menuitem
             id="scf_incidencias.issues_menu"
