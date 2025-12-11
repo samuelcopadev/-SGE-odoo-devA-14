@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <record id="scf_incidencias.activo_tree" model="ir.ui.view">
-            <field name="name">scf.incidencias.activo.tree</field>
-            <field name="model">scf_incidencias.activo</field>
+            <field name="name">scf.incidencias.activos.tree</field>
+            <field name="model">scf_incidencias.activos</field>
             <field name="arch" type="xml">
                 <tree string="Activos">
                     <field name="name"/>
@@ -15,8 +15,8 @@
         </record>
 
         <record id="scf_incidencias.activo_form" model="ir.ui.view">
-            <field name="name">scf.incidencias.activo.form</field>
-            <field name="model">scf_incidencias.activo</field>
+            <field name="name">scf.incidencias.activos.form</field>
+            <field name="model">scf_incidencias.activos</field>
             <field name="arch" type="xml">
                 <form string="Activo">
                     <sheet>

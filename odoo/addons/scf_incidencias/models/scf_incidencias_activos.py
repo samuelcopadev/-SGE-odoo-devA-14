@@ -2,7 +2,7 @@
 from odoo import models, fields
 
 class ScfIncidenciasActivo(models.Model):
-    _name = 'scf_incidencias.activo'
+    _name = 'scf_incidencias.activos'
     _description = 'Activo Informático'
     _order = 'name asc'
 

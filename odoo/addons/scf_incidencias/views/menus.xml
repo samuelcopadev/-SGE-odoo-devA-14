@@ -9,7 +9,7 @@
 
         <record id="scf_incidencias.acciones_activos" model="ir.actions.act_window">
             <field name="name">Inventario de Activos</field>
-            <field name="res_model">scf_incidencias.activo</field>
+            <field name="res_model">scf_incidencias.activos</field>
             <field name="view_mode">tree,form</field>
         </record>
 
