@@ -5,6 +5,10 @@ class ScfIncidenciasIssues(models.Model):
     _name = 'scf_incidencias.issues'
     _description = 'Incidencias'
 
+    @api.model
+    def _expand_states(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
+
     name = fields.Char(string='Título', required=True, help="Introduce el título de la incidencia")
     description = fields.Text(string='Descripción', help="Descripción detallada")
     
@@ -23,4 +27,4 @@ class ScfIncidenciasIssues(models.Model):
         ('draft', 'Nueva'),
         ('process', 'En Proceso'),
         ('done', 'Resuelta')
-    ], string='Estado', default='draft')
+    ], string='Estado', default='draft', group_expand='_expand_states')

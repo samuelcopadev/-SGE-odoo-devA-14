@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="scf_incidencias.acciones" model="ir.actions.act_window">
+        <record id="scf_incidencias.acciones_issues" model="ir.actions.act_window">
             <field name="name">Incidencias</field>
             <field name="res_model">scf_incidencias.issues</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         <record id="scf_incidencias.acciones_activos" model="ir.actions.act_window">
@@ -31,7 +31,7 @@
             id="scf_incidencias.issues_menu"
             name="Incidencias"
             parent="scf_incidencias.root_menu"
-            action="scf_incidencias.acciones"
+            action="scf_incidencias.acciones_issues"
             sequence="1" />
 
         <menuitem
