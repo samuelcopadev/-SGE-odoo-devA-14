@@ -10,6 +10,7 @@
                     <field name="activo_id"/>
                     <field name="users_id" widget="many2one_avatar_user"/>
                     <field name="priority"/>
+                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                     <field name="date_reported"/>
                     <field name="state"/>
                 </tree>
@@ -22,12 +23,22 @@
             <field name="arch" type="xml">
                 <form string="Incidencia">
                     <sheet>
-                     <group>
-                        <field name="priority" widget="priority"/>
-                        <field name="users_id" widget="many2one_avatar_user"/>
-                        <field name="date_reported"/>
-                        <field name="state"/>
-                    </group>
+                        <div class="oe_title">
+                            <h1><field name="name" placeholder="Título de la incidencia..."/></h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="activo_id"/>
+                                <field name="priority" widget="priority"/>
+                            </group>
+                            <group>
+                                <field name="users_id" widget="many2one_avatar_user"/>
+                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="date_reported"/>
+                                <field name="state"/>
+                            </group>
+                        </group>
                     </sheet>
                 </form>
             </field>
@@ -38,12 +49,13 @@
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
               <kanban default_group_by="state" class="o_kanban_small_column" records_draggable="1">
-                 <field name="id"/>
+                <field name="id"/>
                 <field name="name"/>
                 <field name="priority"/>
                 <field name="activo_id"/>
                 <field name="activo_image"/> 
-                <field name="users_id"/> <templates>
+                <field name="users_id"/> 
+                <field name="tag_ids"/> <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click oe_kanban_card d-flex">
                             
@@ -56,10 +68,13 @@
                                     <span><field name="name"/></span>
                                 </strong>
                                 
-                                <div class="text-muted small">
+                                <div class="text-muted small mb-1">
                                     <field name="activo_id"/>
                                 </div>
 
+                                <div class="o_kanban_tags_section">
+                                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                </div>
                                 <div class="o_kanban_record_bottom mt-auto">
                                     <div class="oe_kanban_bottom_left">
                                         <field name="priority" widget="priority"/>

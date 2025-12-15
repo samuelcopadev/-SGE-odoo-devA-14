@@ -34,3 +34,5 @@ class ScfIncidenciasIssues(models.Model):
     activo_image = fields.Binary(related='activo_id.image', string="Imagen del Activo", readonly=True)
 
     users_id = fields.Many2one( 'res.users', default=lambda self: self.env.user)
+    
+    tag_ids = fields.Many2many( 'scf_incidencias.etiquetas',string='Etiquetas')
