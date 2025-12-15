@@ -4,6 +4,7 @@ from odoo import models, fields
 class ScfIncidenciasActivo(models.Model):
     _name = 'scf_incidencias.activos'
     _description = 'Activo Informático'
+    # Define la ordenación por defecto en las vistas (Listas, búsquedas...)
     _order = 'name asc'
 
     name = fields.Char(string='Código/Nombre', required=True, help="Codigo/Nombre del producto")
