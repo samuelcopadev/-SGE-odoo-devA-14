@@ -17,7 +17,7 @@
             <field name="name">scf.incidencias.etiquetas.tree</field>
             <field name="model">scf_incidencias.etiquetas</field>
             <field name="arch" type="xml">
-                <tree string="Etiquetas" editable="bottom" sample="1">
+                <tree string="Etiquetas"  sample="1">
 
                     <field name="name" decoration-bf="1" />
 
