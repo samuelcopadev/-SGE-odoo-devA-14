@@ -1,231 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
-        
-        <record id="user_juan" model="res.users">
-            <field name="name">Juan Técnico (Hardware)</field>
-            <field name="login">juan</field>
-            <field name="password">juan</field>
-            <field name="email">juan@empresa.com</field>
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
-        </record>
-
+    <data>
         <record id="user_ana" model="res.users">
-            <field name="name">Ana Supervisora (SysAdmin)</field>
-            <field name="login">ana</field>
-            <field name="password">ana</field>
-            <field name="email">ana@empresa.com</field>
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+            <field name="name">Ana Técnico</field>
+            <field name="login">ana_t</field>
+            <field name="email">ana@demo.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
-        <record id="user_pedro" model="res.users">
-            <field name="name">Pedro (Almacén/Logística)</field>
-            <field name="login">pedro</field>
-            <field name="password">pedro</field>
-            <field name="email">pedro@empresa.com</field>
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+        <record id="user_carlos" model="res.users">
+            <field name="name">Carlos Redes</field>
+            <field name="login">carlos_r</field>
+            <field name="email">carlos@demo.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
-        <record id="user_maria" model="res.users">
-            <field name="name">María (RRHH/Admin)</field>
-            <field name="login">maria</field>
-            <field name="password">maria</field>
-            <field name="email">maria@empresa.com</field>
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+        <record id="user_luis" model="res.users">
+            <field name="name">Luis Hardware</field>
+            <field name="login">luis_h</field>
+            <field name="email">luis@demo.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
-        <record id="tag_critico" model="scf_incidencias.etiquetas">
-            <field name="name">CRÍTICO</field>
+        <record id="tag_urgente" model="scf_incidencias.etiquetas">
+            <field name="name">Urgente </field>
             <field name="color">1</field> </record>
         <record id="tag_redes" model="scf_incidencias.etiquetas">
-            <field name="name">Redes / Wifi</field>
-            <field name="color">4</field> </record>
-        <record id="tag_hardware" model="scf_incidencias.etiquetas">
-            <field name="name">Hardware</field>
-            <field name="color">3</field> </record>
-        <record id="tag_software" model="scf_incidencias.etiquetas">
-            <field name="name">Software</field>
-            <field name="color">6</field> </record>
-        <record id="tag_seguridad" model="scf_incidencias.etiquetas">
-            <field name="name">Seguridad</field>
+            <field name="name">Redes </field>
             <field name="color">2</field> </record>
-        <record id="tag_vip" model="scf_incidencias.etiquetas">
-            <field name="name">Usuario VIP</field>
+        <record id="tag_hw" model="scf_incidencias.etiquetas">
+            <field name="name">Hardware </field>
+            <field name="color">4</field> </record>
+        <record id="tag_sw" model="scf_incidencias.etiquetas">
+            <field name="name">Software </field>
             <field name="color">10</field> </record>
-        <record id="tag_almacen" model="scf_incidencias.etiquetas">
-            <field name="name">Logística</field>
-            <field name="color">9</field> </record>
-        <record id="tag_ofimatica" model="scf_incidencias.etiquetas">
-            <field name="name">Ofimática</field>
-            <field name="color">8</field> </record>
+        <record id="tag_impresion" model="scf_incidencias.etiquetas">
+            <field name="name">Impresión </field>
+            <field name="color">6</field> </record>
 
-        <record id="asset_servidor" model="scf_incidencias.activos">
-            <field name="name">Servidor Dell PowerEdge R750</field>
-            <field name="model">Rack 2U</field>
-            <field name="serial_no">DELL-SRV-001</field>
-            <field name="category">other</field>
-            <field name="notes">Sala CPD. Acceso restringido.</field>
-        </record>
-        <record id="asset_nas" model="scf_incidencias.activos">
-            <field name="name">NAS Synology Backup</field>
-            <field name="model">DiskStation DS920+</field>
-            <field name="serial_no">SYN-NAS-002</field>
-            <field name="category">other</field>
-        </record>
-        <record id="asset_switch_planta1" model="scf_incidencias.activos">
-            <field name="name">Switch Planta 1 (Ventas)</field>
-            <field name="model">Ubiquiti EdgeSwitch 48</field>
-            <field name="serial_no">UBNT-SW-48</field>
+        <record id="asset_srv_main" model="scf_incidencias.activos">
+            <field name="name">Servidor Principal DC01</field>
+            <field name="model">Dell PowerEdge R750</field>
+            <field name="serial_no">SRV-DC-001</field>
             <field name="category">network</field>
+            <field name="purchase_date">2020-05-15</field>
         </record>
 
-        <record id="asset_zebra_1" model="scf_incidencias.activos">
-            <field name="name">Pistola Lector Códigos #1</field>
-            <field name="model">Zebra TC21</field>
-            <field name="serial_no">ZEBRA-001</field>
-            <field name="category">other</field>
+        <record id="asset_router_core" model="scf_incidencias.activos">
+            <field name="name">Router Fibra Principal</field>
+            <field name="model">Cisco ISR 4000</field>
+            <field name="serial_no">NET-CS-4000</field>
+            <field name="category">network</field>
+            <field name="purchase_date">2021-08-20</field>
         </record>
-        <record id="asset_zebra_2" model="scf_incidencias.activos">
-            <field name="name">Pistola Lector Códigos #2</field>
-            <field name="model">Zebra TC21</field>
-            <field name="serial_no">ZEBRA-002</field>
-            <field name="category">other</field>
+
+        <record id="asset_pc_ceo" model="scf_incidencias.activos">
+            <field name="name">Portátil CEO</field>
+            <field name="model">MacBook Pro M3</field>
+            <field name="serial_no">MAC-CEO-99</field>
+            <field name="category">pc</field>
+            <field name="purchase_date">2024-01-10</field>
         </record>
-        <record id="asset_impresora_etiquetas" model="scf_incidencias.activos">
-            <field name="name">Impresora Etiquetas Envíos</field>
-            <field name="model">Zebra ZD420</field>
-            <field name="serial_no">ZEBRA-PRT-99</field>
+
+        <record id="asset_pc_rec" model="scf_incidencias.activos">
+            <field name="name">PC Recepción</field>
+            <field name="model">HP EliteDesk 800</field>
+            <field name="serial_no">HP-REC-01</field>
+            <field name="category">pc</field>
+            <field name="purchase_date">2019-03-12</field>
+        </record>
+
+        <record id="asset_prt_hall" model="scf_incidencias.activos">
+            <field name="name">Impresora Hall</field>
+            <field name="model">Kyocera Ecosys</field>
+            <field name="serial_no">KYO-PRT-55</field>
             <field name="category">printer</field>
+            <field name="purchase_date">2022-11-05</field>
         </record>
 
-        <record id="asset_laptop_ventas_1" model="scf_incidencias.activos">
-            <field name="name">Portátil Comercial (Zona Norte)</field>
-            <field name="model">Dell Latitude 5420</field>
-            <field name="serial_no">DELL-LAT-001</field>
-            <field name="category">pc</field>
-        </record>
-        <record id="asset_laptop_ventas_2" model="scf_incidencias.activos">
-            <field name="name">Portátil Comercial (Zona Sur)</field>
-            <field name="model">Dell Latitude 5420</field>
-            <field name="serial_no">DELL-LAT-002</field>
-            <field name="category">pc</field>
-        </record>
-        <record id="asset_pc_rrhh" model="scf_incidencias.activos">
-            <field name="name">PC Recursos Humanos</field>
-            <field name="model">Lenovo ThinkCentre Tiny</field>
-            <field name="serial_no">LEN-HR-55</field>
-            <field name="category">pc</field>
-        </record>
-        
-        <record id="asset_macbook" model="scf_incidencias.activos">
-            <field name="name">MacBook Pro CEO</field>
-            <field name="model">M2 Max 16"</field>
-            <field name="serial_no">APPLE-MBP-X1</field>
-            <field name="category">pc</field>
-        </record>
-        <record id="asset_ipad_ceo" model="scf_incidencias.activos">
-            <field name="name">iPad Pro 12.9"</field>
-            <field name="model">iPad Pro M2</field>
-            <field name="serial_no">APPLE-IPAD-X1</field>
-            <field name="category">other</field>
+        <record id="asset_prt_rrhh" model="scf_incidencias.activos">
+            <field name="name">Impresora RRHH</field>
+            <field name="model">Brother MFC-L8690</field>
+            <field name="serial_no">BRO-RH-22</field>
+            <field name="category">printer</field>
+            <field name="purchase_date">2023-02-28</field>
         </record>
 
-        <record id="issue_server_down" model="scf_incidencias.issues">
-            <field name="name">URGENTE: Caída del Servidor de Ficheros</field>
-            <field name="priority">2</field>
+        <record id="issue_1" model="scf_incidencias.issues">
+            <field name="name">CRÍTICO: Caída del Servidor DC01</field>
+            <field name="activo_id" ref="asset_srv_main"/>
+            <field name="users_id" ref="user_carlos"/>
+            <field name="priority">2</field> <field name="state">done</field> <field name="tag_ids" eval="[(4, ref('tag_urgente')), (4, ref('tag_redes'))]"/>
+            <field name="description">El servidor dejó de responder ping a las 03:00 AM.</field>
+            <field name="intervencion_ids" eval="[
+                (0, 0, {'name': 'Reinicio forzoso', 'user_id': ref('user_carlos'), 'time_spent': 1.0}),
+                (0, 0, {'name': 'Restauración RAID', 'user_id': ref('user_carlos'), 'time_spent': 4.0})
+            ]"/>
+        </record>
+
+        <record id="issue_2" model="scf_incidencias.issues">
+            <field name="name">Papel atascado bandeja 2</field>
+            <field name="activo_id" ref="asset_prt_hall"/>
+            <field name="users_id" ref="user_luis"/>
+            <field name="priority">1</field>
             <field name="state">done</field>
-            <field name="activo_id" ref="asset_servidor"/>
-            <field name="users_id" ref="user_ana"/>
-            <field name="tag_ids" eval="[(4, ref('tag_critico')), (4, ref('tag_redes'))]"/>
-            <field name="description">Nadie puede acceder a la carpeta compartida.</field>
+            <field name="tag_ids" eval="[(4, ref('tag_impresion'))]"/>
+            <field name="intervencion_ids" eval="[
+                (0, 0, {'name': 'Retirada de papel y limpieza rodillos', 'user_id': ref('user_luis'), 'time_spent': 0.5})
+            ]"/>
         </record>
 
-        <record id="issue_nas_full" model="scf_incidencias.issues">
-            <field name="name">Alerta de Espacio en Disco NAS</field>
-            <field name="priority">1</field>
+        <record id="issue_3" model="scf_incidencias.issues">
+            <field name="name">MacBook va muy lento con Excel</field>
+            <field name="activo_id" ref="asset_pc_ceo"/>
+            <field name="users_id" ref="user_ana"/>
+            <field name="priority">2</field> <field name="state">process</field>
+            <field name="tag_ids" eval="[(4, ref('tag_sw')), (4, ref('tag_urgente'))]"/>
+            <field name="description">El CEO se queja de lentitud al abrir hojas de cálculo grandes.</field>
+            <field name="intervencion_ids" eval="[
+                (0, 0, {'name': 'Actualización de Office', 'user_id': ref('user_ana'), 'time_spent': 1.0}),
+                (0, 0, {'name': 'Limpieza de caché', 'user_id': ref('user_ana'), 'time_spent': 0.5})
+            ]"/>
+        </record>
+
+        <record id="issue_4" model="scf_incidencias.issues">
+            <field name="name">PC Recepción pantallazo azul</field>
+            <field name="activo_id" ref="asset_pc_rec"/>
+            <field name="users_id" ref="user_luis"/>
+            <field name="priority">2</field>
             <field name="state">process</field>
-            <field name="activo_id" ref="asset_nas"/>
-            <field name="users_id" ref="user_ana"/>
-            <field name="tag_ids" eval="[(4, ref('tag_hardware'))]"/>
-            <field name="description">Queda menos del 5% de espacio libre.</field>
+            <field name="tag_ids" eval="[(4, ref('tag_hw'))]"/>
+            <field name="intervencion_ids" eval="[
+                (0, 0, {'name': 'Test de memoria RAM', 'user_id': ref('user_luis'), 'time_spent': 2.0})
+            ]"/>
         </record>
 
-        <record id="issue_zebra_broken" model="scf_incidencias.issues">
-            <field name="name">Pistola 1 no lee códigos QR</field>
+        <record id="issue_5" model="scf_incidencias.issues">
+            <field name="name">Abrir puertos VPN</field>
+            <field name="activo_id" ref="asset_router_core"/>
+            <field name="users_id" ref="user_carlos"/>
             <field name="priority">1</field>
-            <field name="state">draft</field>
-            <field name="activo_id" ref="asset_zebra_1"/>
-            <field name="users_id" ref="user_juan"/> <field name="tag_ids" eval="[(4, ref('tag_almacen')), (4, ref('tag_hardware'))]"/>
-            <field name="description">El láser no se enciende al apretar el gatillo.</field>
+            <field name="state">draft</field> <field name="tag_ids" eval="[(4, ref('tag_redes'))]"/>
+            <field name="description">Solicitud para configurar VPN para teletrabajo.</field>
         </record>
 
-        <record id="issue_label_printer" model="scf_incidencias.issues">
-            <field name="name">Etiquetas salen borrosas</field>
+        <record id="issue_6" model="scf_incidencias.issues">
+            <field name="name">Cambiar Tóner Cyan</field>
+            <field name="activo_id" ref="asset_prt_rrhh"/>
             <field name="priority">0</field>
-            <field name="state">done</field>
-            <field name="activo_id" ref="asset_impresora_etiquetas"/>
-            <field name="users_id" ref="user_pedro"/> <field name="tag_ids" eval="[(4, ref('tag_almacen'))]"/>
-        </record>
-
-        <record id="issue_excel_crash" model="scf_incidencias.issues">
-            <field name="name">Excel se cierra al abrir nóminas</field>
-            <field name="priority">1</field>
-            <field name="state">process</field>
-            <field name="activo_id" ref="asset_pc_rrhh"/>
-            <field name="users_id" ref="user_juan"/>
-            <field name="tag_ids" eval="[(4, ref('tag_software')), (4, ref('tag_ofimatica'))]"/>
-        </record>
-
-        <record id="issue_vpn_sales" model="scf_incidencias.issues">
-            <field name="name">No conecta VPN desde casa</field>
-            <field name="priority">2</field>
             <field name="state">draft</field>
-            <field name="activo_id" ref="asset_laptop_ventas_1"/>
-            <field name="users_id" ref="user_ana"/>
-            <field name="tag_ids" eval="[(4, ref('tag_redes')), (4, ref('tag_seguridad'))]"/>
+            <field name="tag_ids" eval="[(4, ref('tag_impresion'))]"/>
         </record>
 
-        <record id="issue_ipad_sync" model="scf_incidencias.issues">
-            <field name="name">No sincroniza el correo en iPad</field>
-            <field name="priority">1</field>
+        <record id="issue_7" model="scf_incidencias.issues">
+            <field name="name">Virus detectado en PC Recepción</field>
+            <field name="activo_id" ref="asset_pc_rec"/>
+            <field name="users_id" ref="user_ana"/>
+            <field name="priority">2</field>
             <field name="state">done</field>
-            <field name="activo_id" ref="asset_ipad_ceo"/>
-            <field name="users_id" ref="user_ana"/>
-            <field name="tag_ids" eval="[(4, ref('tag_vip')), (4, ref('tag_software'))]"/>
-        </record>
-
-        <record id="int_srv_reboot" model="scf_incidencias.intervenciones">
-            <field name="name">Reinicio forzado y checkdisk</field>
-            <field name="time_spent">1.5</field>
-            <field name="user_id" ref="user_ana"/>
-            <field name="issue_id" ref="issue_server_down"/>
-        </record>
-        <record id="int_srv_replace" model="scf_incidencias.intervenciones">
-            <field name="name">Sustitución disco duro fallido</field>
-            <field name="time_spent">4.0</field>
-            <field name="user_id" ref="user_juan"/>
-            <field name="issue_id" ref="issue_server_down"/>
-        </record>
-
-        <record id="int_lbl_clean" model="scf_incidencias.intervenciones">
-            <field name="name">Limpieza cabezal térmico con alcohol</field>
-            <field name="time_spent">0.5</field>
-            <field name="user_id" ref="user_pedro"/>
-            <field name="issue_id" ref="issue_label_printer"/>
-        </record>
-
-        <record id="int_excel_update" model="scf_incidencias.intervenciones">
-            <field name="name">Actualización de Office 365</field>
-            <field name="time_spent">1.0</field>
-            <field name="user_id" ref="user_juan"/>
-            <field name="issue_id" ref="issue_excel_crash"/>
-        </record>
-        
-        <record id="int_ipad_pass" model="scf_incidencias.intervenciones">
-            <field name="name">Reseteo de contraseña Exchange</field>
-            <field name="time_spent">0.25</field>
-            <field name="user_id" ref="user_ana"/>
-            <field name="issue_id" ref="issue_ipad_sync"/>
+            <field name="tag_ids" eval="[(4, ref('tag_sw')), (4, ref('tag_urgente'))]"/>
+            <field name="intervencion_ids" eval="[
+                (0, 0, {'name': 'Escaneo completo', 'user_id': ref('user_ana'), 'time_spent': 3.0}),
+                (0, 0, {'name': 'Formateo y reinstalación', 'user_id': ref('user_ana'), 'time_spent': 4.5})
+            ]"/>
         </record>
 
     </data>
