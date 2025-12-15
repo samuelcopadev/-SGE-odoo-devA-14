@@ -19,12 +19,13 @@
 
                     <field name="name" string="Título" decoration-bf="1" />
                     <field name="activo_id" />
-
                     <field name="users_id" widget="many2one_avatar_user" optional="show" />
+
+                    <field name="total_hours" widget="float_time" sum="Total Global" optional="show"
+                        decoration-bf="1" />
+
                     <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"
                         optional="show" />
-                    <field name="date_reported" optional="hide" />
-
                     <field name="state"
                         widget="badge"
                         decoration-success="state == 'done'"
@@ -63,6 +64,10 @@
                                 <field name="tag_ids" widget="many2many_tags"
                                     options="{'color_field': 'color'}" />
                                 <field name="date_reported" />
+
+                                <field name="total_hours" widget="float_time"
+                                    decoration-danger="total_hours > 10" decoration-bf="1"
+                                    readonly="1" />
                             </group>
                         </group>
 
@@ -73,7 +78,8 @@
                                         <field name="date" />
                                         <field name="user_id" widget="many2one_avatar_user" />
                                         <field name="name" />
-                                        <field name="time_spent" sum="Total Horas" decoration-bf="1" />
+                                        <field name="time_spent" widget="float_time"
+                                            sum="Total Visual" decoration-bf="1" />
                                     </tree>
                                 </field>
                             </page>
@@ -99,7 +105,6 @@
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="state" records_draggable="1" sample="1">
-
                     <field name="id" />
                     <field name="name" />
                     <field name="priority" />
@@ -107,6 +112,7 @@
                     <field name="activo_image" />
                     <field name="users_id" />
                     <field name="tag_ids" />
+                    <field name="total_hours" />
 
                     <templates>
                         <t t-name="kanban-box">
@@ -124,15 +130,14 @@
                                             style="font-size: 1.1em; color: #212529; word-wrap: break-word; white-space: normal;">
                                             <field name="name" />
                                         </strong>
-                                        <span class="text-muted small d-block"
-                                            style="word-wrap: break-word; white-space: normal;">
+                                        <span class="text-muted small d-block">
                                             <i class="fa fa-desktop me-1" />
                                             <field name="activo_id" />
                                         </span>
                                     </div>
                                 </div>
 
-                                <div class="w-100 mb-2" style="white-space: normal;">
+                                <div class="w-100 mb-2">
                                     <field name="tag_ids" widget="many2many_tags"
                                         options="{'color_field': 'color'}" />
                                 </div>
@@ -141,6 +146,10 @@
                                     class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
                                     <div class="d-flex align-items-center">
                                         <field name="priority" widget="priority" />
+                                    </div>
+                                    <div class="d-flex align-items-center" title="Horas Invertidas">
+                                        <i class="fa fa-clock-o me-1 text-muted" />
+                                        <field name="total_hours" widget="float_time" />
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <field name="users_id" widget="many2one_avatar_user" />

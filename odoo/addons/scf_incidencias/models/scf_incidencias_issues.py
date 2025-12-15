@@ -1,6 +1,6 @@
 # models/scf_incidencias_issues.py
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError # type: ignore
 
 class ScfIncidenciasIssues(models.Model):
     _name = 'scf_incidencias.issues'
