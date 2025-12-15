@@ -31,7 +31,7 @@ Long description of module's purpose
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/scf_incidencias_demo.xml',
     ],
     'application': True,
 }
