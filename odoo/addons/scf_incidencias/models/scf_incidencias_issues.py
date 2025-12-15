@@ -5,6 +5,8 @@ class ScfIncidenciasIssues(models.Model):
     _name = 'scf_incidencias.issues'
     _description = 'Incidencias'
 
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    
     # Este método fuerza que todas las columnas del Kanban (Nueva, En Proceso, Resuelta)
     # se muestren siempre, incluso si no hay ninguna incidencia en ese estado.
     # Sin esto, las columnas vacías desaparecerían visualmente.
