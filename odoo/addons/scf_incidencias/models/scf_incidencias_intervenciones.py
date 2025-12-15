@@ -10,4 +10,3 @@ class ScfIncidenciasIntervencion(models.Model):
     description = fields.Text(string='Detalles')
     date = fields.Datetime(string='Fecha', default=fields.Datetime.now)
     time_spent = fields.Float(string='Horas', help="Ej: 1.5")
-    

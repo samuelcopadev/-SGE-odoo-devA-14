@@ -17,7 +17,7 @@ class ScfIncidenciasActivo(models.Model):
         ('network', 'Redes'),
         ('other', 'Otro')
     ], string='Categoría', required=True, default='pc')
-    
-    purchase_date = fields.Date(string='Fecha de Compra')
+
     image = fields.Binary(string="Imagen")
+    purchase_date = fields.Date(string="Fecha de Compra")
     notes = fields.Text(string="Notas")
