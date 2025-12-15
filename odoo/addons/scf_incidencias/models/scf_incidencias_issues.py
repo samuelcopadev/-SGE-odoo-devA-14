@@ -32,3 +32,5 @@ class ScfIncidenciasIssues(models.Model):
     activo_id = fields.Many2one('scf_incidencias.activos',  string='Activo Afectado', help="Selecciona el equipo que tiene el problema")
 
     activo_image = fields.Binary(related='activo_id.image', string="Imagen del Activo", readonly=True)
+
+    users_id = fields.Many2one( 'res.users', default=lambda self: self.env.user)
