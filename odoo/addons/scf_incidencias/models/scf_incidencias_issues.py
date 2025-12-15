@@ -28,3 +28,7 @@ class ScfIncidenciasIssues(models.Model):
         ('process', 'En Proceso'),
         ('done', 'Resuelta')
     ], string='Estado', default='draft', group_expand='_expand_states')
+
+    activo_id = fields.Many2one('scf_incidencias.activos',  string='Activo Afectado', help="Selecciona el equipo que tiene el problema")
+
+    activo_image = fields.Binary(related='activo_id.image', string="Imagen del Activo", readonly=True)
