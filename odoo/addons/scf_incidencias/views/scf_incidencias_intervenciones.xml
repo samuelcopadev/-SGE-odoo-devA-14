@@ -3,10 +3,13 @@
     <data>
         <record id="scf_incidencias.intervenciones_tree" model="ir.ui.view">
             <field name="name">scf.incidencias.intervenciones.tree</field>
-            <field name="model">scf_incidencias.intervenciones</field> <field name="arch" type="xml">
+            <field name="model">scf_incidencias.intervenciones</field> 
+            <field name="arch" type="xml">
                 <tree string="Partes de Trabajo">
                     <field name="date"/>
+                    <field name="issue_id"/>
                     <field name="name"/>
+                    <field name="user_id" widget="many2one_avatar_user"/>
                     <field name="time_spent" sum="Total Horas"/>
                 </tree>
             </field>
@@ -14,19 +17,23 @@
 
         <record id="scf_incidencias.intervenciones_form" model="ir.ui.view">
             <field name="name">scf.incidencias.intervenciones.form</field>
-            <field name="model">scf_incidencias.intervenciones</field> <field name="arch" type="xml">
+            <field name="model">scf_incidencias.intervenciones</field> 
+            <field name="arch" type="xml">
                 <form string="Parte de Trabajo">
                     <sheet>
                         <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Resumen del trabajo"/>
                             <h1>
-                                <field name="name" placeholder="Resumen del trabajo..."/>
+                                <field name="name" placeholder="Ej: Cambio de disco duro..."/>
                             </h1>
                         </div>
                         <group>
                             <group>
+                                <field name="issue_id"/> 
                                 <field name="date"/>
                             </group>
                             <group>
+                                <field name="user_id" widget="many2one_avatar_user"/>
                                 <field name="time_spent"/>
                             </group>
                         </group>

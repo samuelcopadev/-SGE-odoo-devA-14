@@ -36,3 +36,5 @@ class ScfIncidenciasIssues(models.Model):
     users_id = fields.Many2one( 'res.users', default=lambda self: self.env.user)
     
     tag_ids = fields.Many2many( 'scf_incidencias.etiquetas',string='Etiquetas')
+
+    intervencion_ids = fields.One2many('scf_incidencias.intervenciones', 'issue_id', string='Partes de Trabajo')
