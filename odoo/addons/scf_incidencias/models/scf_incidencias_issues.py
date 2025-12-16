@@ -32,7 +32,7 @@ class ScfIncidenciasIssues(models.Model):
         ('done', 'Resuelta')
     ], string='Estado', default='draft', tracking=True)
     
-    tag_ids = fields.Many2many('scf_incidencias.etiquetas', string='Etiquetas')
+    tag_ids = fields.Many2many('scf_incidencias.etiquetas', string='Etiquetas',relation="scf_rel_issues_etiquetas")
     intervencion_ids = fields.One2many('scf_incidencias.intervenciones', 'issue_id', string='Intervenciones')
 
     # store=True guarda el cálculo en base de datos para permitir búsquedas y filtros
