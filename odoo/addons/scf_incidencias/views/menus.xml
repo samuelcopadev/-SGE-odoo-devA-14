@@ -36,7 +36,7 @@
 
         <menuitem
             id="scf_incidencias.activos_menu"
-            name="Inventario"
+            name="Activos"
             parent="scf_incidencias.root_menu"
             action="scf_incidencias.acciones_activos"
             sequence="2" />
