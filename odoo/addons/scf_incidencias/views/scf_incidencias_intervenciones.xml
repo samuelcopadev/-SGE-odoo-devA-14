@@ -15,9 +15,10 @@
                     <filter string="Mis Intervenciones" name="my_work"
                         domain="[('user_id', '=', uid)]" />
                     <separator />
-                    <filter string="Hoy" name="today"
-                        domain="[('date', '&gt;=', datetime.datetime.now().replace(hour=0, minute=0, second=0)),('date', '&lt;=', datetime.datetime.now().replace(hour=23, minute=59, second=59))]" />
 
+                    <filter string="Hoy" name="today"
+                        domain="[('date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')), 
+                         ('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]" />
                     <group expand="1" string="Agrupar Por">
                         <filter string="Técnico" name="group_user" context="{'group_by':'user_id'}" />
                         <filter string="Incidencia" name="group_issue"
