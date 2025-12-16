@@ -23,20 +23,25 @@
         </record>
 
         <record id="tag_urgente" model="scf_incidencias.etiquetas">
-            <field name="name">Urgente </field>
-            <field name="color">1</field> </record>
+            <field name="name">Urgente</field>
+            <field name="color">1</field>
+        </record>
         <record id="tag_redes" model="scf_incidencias.etiquetas">
-            <field name="name">Redes </field>
-            <field name="color">2</field> </record>
+            <field name="name">Redes</field>
+            <field name="color">2</field>
+        </record>
         <record id="tag_hw" model="scf_incidencias.etiquetas">
-            <field name="name">Hardware </field>
-            <field name="color">4</field> </record>
+            <field name="name">Hardware</field>
+            <field name="color">4</field>
+        </record>
         <record id="tag_sw" model="scf_incidencias.etiquetas">
-            <field name="name">Software </field>
-            <field name="color">10</field> </record>
+            <field name="name">Software</field>
+            <field name="color">10</field>
+        </record>
         <record id="tag_impresion" model="scf_incidencias.etiquetas">
-            <field name="name">Impresión </field>
-            <field name="color">6</field> </record>
+            <field name="name">Impresión</field>
+            <field name="color">6</field>
+        </record>
 
         <record id="asset_srv_main" model="scf_incidencias.activos">
             <field name="name">Servidor Principal DC01</field>
@@ -44,6 +49,7 @@
             <field name="serial_no">SRV-DC-001</field>
             <field name="category">network</field>
             <field name="purchase_date">2020-05-15</field>
+            <field name="image" type="base64" file="scf_incidencias/static/img/servidor.jpg"/>
         </record>
 
         <record id="asset_router_core" model="scf_incidencias.activos">
@@ -52,6 +58,7 @@
             <field name="serial_no">NET-CS-4000</field>
             <field name="category">network</field>
             <field name="purchase_date">2021-08-20</field>
+            <field name="image" type="base64" file="scf_incidencias/static/img/router.jpg"/>
         </record>
 
         <record id="asset_pc_ceo" model="scf_incidencias.activos">
@@ -60,6 +67,7 @@
             <field name="serial_no">MAC-CEO-99</field>
             <field name="category">pc</field>
             <field name="purchase_date">2024-01-10</field>
+            <field name="image" type="base64" file="scf_incidencias/static/img/macbook.jpg"/>
         </record>
 
         <record id="asset_pc_rec" model="scf_incidencias.activos">
@@ -68,6 +76,7 @@
             <field name="serial_no">HP-REC-01</field>
             <field name="category">pc</field>
             <field name="purchase_date">2019-03-12</field>
+            <field name="image" type="base64" file="scf_incidencias/static/img/pc_hp.jpg"/>
         </record>
 
         <record id="asset_prt_hall" model="scf_incidencias.activos">
@@ -76,6 +85,7 @@
             <field name="serial_no">KYO-PRT-55</field>
             <field name="category">printer</field>
             <field name="purchase_date">2022-11-05</field>
+            <field name="image" type="base64" file="scf_incidencias/static/img/kyocera.jpg"/>
         </record>
 
         <record id="asset_prt_rrhh" model="scf_incidencias.activos">
@@ -84,13 +94,16 @@
             <field name="serial_no">BRO-RH-22</field>
             <field name="category">printer</field>
             <field name="purchase_date">2023-02-28</field>
+            <field name="image" type="base64" file="scf_incidencias/static/img/brother.jpg"/>
         </record>
 
         <record id="issue_1" model="scf_incidencias.issues">
             <field name="name">CRÍTICO: Caída del Servidor DC01</field>
             <field name="activo_id" ref="asset_srv_main"/>
             <field name="users_id" ref="user_carlos"/>
-            <field name="priority">2</field> <field name="state">done</field> <field name="tag_ids" eval="[(4, ref('tag_urgente')), (4, ref('tag_redes'))]"/>
+            <field name="priority">2</field> 
+            <field name="state">done</field> 
+            <field name="tag_ids" eval="[(4, ref('tag_urgente')), (4, ref('tag_redes'))]"/>
             <field name="description">El servidor dejó de responder ping a las 03:00 AM.</field>
             <field name="intervencion_ids" eval="[
                 (0, 0, {'name': 'Reinicio forzoso', 'user_id': ref('user_carlos'), 'time_spent': 1.0}),
@@ -114,7 +127,8 @@
             <field name="name">MacBook va muy lento con Excel</field>
             <field name="activo_id" ref="asset_pc_ceo"/>
             <field name="users_id" ref="user_ana"/>
-            <field name="priority">2</field> <field name="state">process</field>
+            <field name="priority">2</field> 
+            <field name="state">process</field>
             <field name="tag_ids" eval="[(4, ref('tag_sw')), (4, ref('tag_urgente'))]"/>
             <field name="description">El CEO se queja de lentitud al abrir hojas de cálculo grandes.</field>
             <field name="intervencion_ids" eval="[
@@ -140,7 +154,8 @@
             <field name="activo_id" ref="asset_router_core"/>
             <field name="users_id" ref="user_carlos"/>
             <field name="priority">1</field>
-            <field name="state">draft</field> <field name="tag_ids" eval="[(4, ref('tag_redes'))]"/>
+            <field name="state">draft</field> 
+            <field name="tag_ids" eval="[(4, ref('tag_redes'))]"/>
             <field name="description">Solicitud para configurar VPN para teletrabajo.</field>
         </record>
 
