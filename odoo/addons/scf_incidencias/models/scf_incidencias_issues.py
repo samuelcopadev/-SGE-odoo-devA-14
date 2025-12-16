@@ -44,7 +44,6 @@ class ScfIncidenciasIssues(models.Model):
         if self.activo_id:
             if self.activo_id.category == 'network':
                 self.priority = '2'
-                self.description = _("¡ATENCIÓN! Incidencia en equipo de red crítico.")
             elif self.activo_id.category == 'printer':
                 self.priority = '0'
 
