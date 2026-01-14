@@ -7,23 +7,31 @@
             <field name="model">scf_incidencias.intervenciones</field>
             <field name="arch" type="xml">
                 <search string="Buscar Partes de Trabajo">
+
                     <field name="name" />
                     <field name="issue_id" />
                     <field name="user_id" />
                     <field name="date" />
 
+                    <!-- uid representa al usuario logueado -->
                     <filter string="Mis Intervenciones" name="my_work"
                         domain="[('user_id', '=', uid)]" />
+
                     <separator />
 
+                    <!-- uso de context_today() para filtrar el día actual -->
                     <filter string="Hoy" name="today"
                         domain="[('date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')), 
-                         ('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]" />
+                                 ('date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]" />
+
                     <group expand="1" string="Agrupar Por">
-                        <filter string="Técnico" name="group_user" context="{'group_by':'user_id'}" />
+                        <filter string="Técnico" name="group_user"
+                            context="{'group_by':'user_id'}" />
                         <filter string="Incidencia" name="group_issue"
                             context="{'group_by':'issue_id'}" />
-                        <filter string="Mes" name="group_date" context="{'group_by':'date:month'}" />
+                        <!-- agrupación por mes mediante date:month -->
+                        <filter string="Mes" name="group_date"
+                            context="{'group_by':'date:month'}" />
                     </group>
                 </search>
             </field>
@@ -33,15 +41,26 @@
             <field name="name">scf.incidencias.intervenciones.tree</field>
             <field name="model">scf_incidencias.intervenciones</field>
             <field name="arch" type="xml">
-                <tree string="Partes de Trabajo" sample="1" decoration-muted="time_spent == 0"
-                    default_order="date desc">
+                <tree string="Partes de Trabajo"
+                      sample="1"
+                      decoration-muted="time_spent == 0"
+                      default_order="date desc">
+
+                    <!-- widget date fuerza visualización como fecha -->
                     <field name="date" widget="date" />
+
+                    <!-- widget específico para mostrar avatar del usuario -->
                     <field name="user_id" widget="many2one_avatar_user"
                         options="{'display_avatar': True}" />
+
                     <field name="issue_id" decoration-bf="1" />
                     <field name="name" optional="show" />
 
-                    <field name="time_spent" widget="float_time" sum="Total Horas" decoration-bf="1"
+                    <!-- float_time muestra horas en formato HH:MM y permite sumatorio -->
+                    <field name="time_spent"
+                        widget="float_time"
+                        sum="Total Horas"
+                        decoration-bf="1"
                         class="text-end" />
                 </tree>
             </field>
@@ -53,27 +72,35 @@
             <field name="arch" type="xml">
                 <form string="Parte de Trabajo">
                     <sheet>
+
+                        <!-- avatar del técnico asignado -->
                         <field name="user_id" widget="many2one_avatar_user" class="oe_avatar" />
+
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" string="Resumen del trabajo" />
                             <h1>
                                 <field name="name" placeholder="Ej: Cambio de disco duro..." />
                             </h1>
                         </div>
+
                         <group>
                             <group string="Contexto">
+                                <!-- no_create evita crear incidencias desde aquí -->
                                 <field name="issue_id" options="{'no_create': True}" />
                                 <field name="date" />
                             </group>
                             <group string="Imputación">
+                                <!-- float_time para imputación de horas -->
                                 <field name="time_spent" widget="float_time"
                                     style="font-size: 1.5em; font-weight: bold;" />
                             </group>
                         </group>
+
                         <notebook>
                             <page string="Detalles Técnicos">
-                                <field name="description" placeholder="Pasos técnicos..."
-                                    widget="html" />
+                                <!-- html para permitir texto enriquecido -->
+                                <field name="description" widget="html"
+                                    placeholder="Pasos técnicos..." />
                             </page>
                         </notebook>
                     </sheet>
@@ -85,6 +112,7 @@
             <field name="name">scf.incidencias.intervenciones.graph</field>
             <field name="model">scf_incidencias.intervenciones</field>
             <field name="arch" type="xml">
+                <!-- vista gráfica para análisis de horas por técnico -->
                 <graph string="Análisis de Horas" type="bar" stacked="True">
                     <field name="user_id" />
                     <field name="time_spent" type="measure" />
