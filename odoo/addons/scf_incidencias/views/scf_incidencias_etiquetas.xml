@@ -17,10 +17,12 @@
             <field name="name">scf.incidencias.etiquetas.tree</field>
             <field name="model">scf_incidencias.etiquetas</field>
             <field name="arch" type="xml">
-                <tree string="Etiquetas"  sample="1">
+                <tree string="Etiquetas" sample="1">
 
+                    <!-- decoration-bf resalta visualmente el campo principal -->
                     <field name="name" decoration-bf="1" />
 
+                    <!-- color_picker permite seleccionar color desde la vista -->
                     <field name="color" widget="color_picker" />
 
                     <field name="description" optional="show"
@@ -44,11 +46,13 @@
 
                         <group>
                             <group>
+                                <!-- uso del widget color_picker en formulario -->
                                 <field name="color" widget="color_picker" />
                             </group>
                         </group>
 
                         <separator string="Detalles" />
+
                         <field name="description"
                             placeholder="Describe para qué sirve esta etiqueta (opcional)..." />
                     </sheet>
