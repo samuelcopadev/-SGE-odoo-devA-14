@@ -12,7 +12,6 @@
                     <field name="serial_no" />
                     <field name="model" />
 
-                    <!-- domain aplicado directamente desde la vista -->
                     <filter string="Ordenadores" name="category_pc"
                         domain="[('category', '=', 'pc')]" />
                     <filter string="Impresoras" name="category_printer"
@@ -20,7 +19,6 @@
                     <filter string="Redes" name="category_network"
                         domain="[('category', '=', 'network')]" />
 
-                    <!-- group_by mediante context  -->
                     <group expand="1" string="Agrupar Por">
                         <filter string="Categoría" name="group_category"
                             context="{'group_by':'category'}" />
@@ -35,15 +33,12 @@
             <field name="arch" type="xml">
                 <tree string="Activos" sample="1">
 
-                    <!-- widget image en tree requiere tamaño explícito -->
                     <field name="image" widget="image" options="{'size': [25, 25]}" string=" " />
 
-                    <!-- decoration-bf fuerza negrita -->
                     <field name="name" decoration-bf="1" />
                     <field name="model" optional="show" />
                     <field name="serial_no" optional="hide" />
 
-                    <!-- badge + decoraciones condicionales -->
                     <field name="category"
                         widget="badge"
                         decoration-info="category == 'pc'"
@@ -62,7 +57,6 @@
                 <form string="Activo">
                     <sheet>
 
-                        <!-- clase oe_avatar aplica estilo estándar de imagen -->
                         <field name="image" widget="image" class="oe_avatar" />
 
                         <div class="oe_title">
