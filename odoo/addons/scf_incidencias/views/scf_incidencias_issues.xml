@@ -7,8 +7,8 @@
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
                 <tree string="Incidencia"
-                      decoration-muted="state == 'done'"
-                      sample="1">
+                    decoration-muted="state == 'done'"
+                    sample="1">
 
                     <field name="priority"
                         widget="badge"
@@ -46,9 +46,9 @@
                 <form string="Incidencia">
                     <header>
                         <field name="state"
-                               widget="statusbar"
-                               options="{'clickable': '1'}"
-                               statusbar_visible="draft,process,done" />
+                            widget="statusbar"
+                            options="{'clickable': '1'}"
+                            statusbar_visible="draft,process,done" />
                     </header>
 
                     <sheet>
@@ -85,7 +85,7 @@
                             <page string="Intervenciones / Horas">
                                 <field name="intervencion_ids">
                                     <tree editable="bottom"
-                                          decoration-muted="time_spent == 0">
+                                        decoration-muted="time_spent == 0">
                                         <field name="date" />
                                         <field name="user_id" widget="many2one_avatar_user" />
                                         <field name="name" />
@@ -118,8 +118,8 @@
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="state"
-                        records_draggable="1"
-                        sample="1">
+                    records_draggable="1"
+                    sample="1">
 
                     <field name="id" />
                     <field name="name" />
@@ -158,7 +158,8 @@
                                         options="{'color_field': 'color'}" />
                                 </div>
 
-                                <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                                <div
+                                    class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
                                     <field name="priority" widget="priority" />
                                     <field name="total_hours" widget="float_time" />
                                     <field name="users_id" widget="many2one_avatar_user" />

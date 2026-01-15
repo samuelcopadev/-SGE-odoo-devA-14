@@ -134,8 +134,7 @@
                                         decoration-success="category == 'printer'"
                                         decoration-warning="category == 'network'" />
 
-                                    <div class="text-muted small">
-                                        SN: <field name="serial_no" />
+                                    <div class="text-muted small"> SN: <field name="serial_no" />
                                     </div>
                                 </div>
                             </div>
