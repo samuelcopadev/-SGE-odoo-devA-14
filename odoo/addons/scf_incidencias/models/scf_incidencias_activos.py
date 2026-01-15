@@ -22,3 +22,13 @@ class ScfIncidenciasActivo(models.Model):
     image = fields.Binary(string="Imagen")
     purchase_date = fields.Date(string="Fecha de Compra")
     notes = fields.Text(string="Notas")
+
+    # Restricción SQL para garantizar integridad de datos:
+    # Impide crear dos activos con el mismo número de serie a nivel de Base de Datos.
+    _sql_constraints = [
+        (
+            'serial_no_unique', 
+            'UNIQUE(serial_no)', 
+            'El número de serie debe ser único. Ya existe un activo registrado con este serial.'
+        )
+    ]
