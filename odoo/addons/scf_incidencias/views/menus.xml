@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+        <!-- Acciones ventana que definen el modelo y las vistas accesibles desde los menús -->
         <record id="scf_incidencias.acciones_issues" model="ir.actions.act_window">
             <field name="name">Incidencias</field>
             <field name="res_model">scf_incidencias.issues</field>
@@ -25,8 +27,13 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="scf_incidencias.root_menu" name="Gestor de Incidencias" sequence="1"/>
+        <!-- Menú raíz del módulo -->
+        <menuitem
+            id="scf_incidencias.root_menu"
+            name="Gestor de Incidencias"
+            sequence="1"/>
 
+        <!-- Menús hijos que enlazan con las acciones definidas -->
         <menuitem
             id="scf_incidencias.issues_menu"
             name="Incidencias"
@@ -48,12 +55,12 @@
             action="scf_incidencias.acciones_intervenciones"
             sequence="3" />
 
-
         <menuitem
             id="scf_incidencias.etiquetas_menu"
             name="Configuración Etiquetas"
             parent="scf_incidencias.root_menu"
             action="scf_incidencias.acciones_etiquetas"
             sequence="4" />
+
     </data>
 </odoo>
