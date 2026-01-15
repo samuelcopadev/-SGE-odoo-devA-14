@@ -138,10 +138,10 @@
 
                                 <div class="d-flex mb-2">
                                     <div class="o_kanban_image me-2 flex-shrink-0">
-                                        <field name="activo_image"
-                                            widget="image"
-                                            class="oe_avatar"
-                                            options="{'size': [45, 45]}" />
+                                        <img t-att-src="kanban_image('scf_incidencias.issues', 'activo_image', record.id.raw_value)"
+                                             alt="Imagen Activo"
+                                             class="oe_avatar"
+                                             style="width: 45px; height: 45px;"/>
                                     </div>
 
                                     <div class="flex-grow-1">
