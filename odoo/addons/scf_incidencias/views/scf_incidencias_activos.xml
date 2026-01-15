@@ -77,7 +77,6 @@
 
                         <group>
                             <group string="Datos Técnicos">
-                                <!-- radio horizontal mejora la selección de categorías -->
                                 <field name="category" widget="radio" options="{'horizontal': true}" />
                                 <field name="serial_no" />
                             </group>
@@ -88,7 +87,6 @@
 
                         <notebook>
                             <page string="Notas y Observaciones">
-                                <!-- widget html permite texto enriquecido -->
                                 <field name="notes" widget="html" />
                             </page>
                         </notebook>
@@ -103,7 +101,6 @@
             <field name="arch" type="xml">
                 <kanban sample="1">
 
-                    <!-- fields declarados para su uso en la plantilla -->
                     <field name="id" />
                     <field name="name" />
                     <field name="model" />
@@ -113,7 +110,6 @@
 
                     <templates>
                         <t t-name="kanban-box">
-                            <!-- oe_kanban_global_click hace toda la tarjeta clicable -->
                             <div class="oe_kanban_global_click d-flex flex-column p-2">
 
                                 <div class="d-flex align-items-center mb-2">
@@ -132,7 +128,6 @@
                                 </div>
 
                                 <div class="mt-auto">
-                                    <!-- mismas decoraciones que en tree -->
                                     <field name="category"
                                         widget="badge"
                                         decoration-info="category == 'pc'"
