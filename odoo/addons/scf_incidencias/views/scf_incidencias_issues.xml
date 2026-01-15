@@ -20,11 +20,13 @@
                     <field name="name" string="Título" decoration-bf="1" />
                     <field name="activo_id" />
                     <field name="users_id" widget="many2one_avatar_user" optional="show" />
+                    
                     <field name="total_hours"
                         widget="float_time"
                         sum="Total Global"
                         optional="show"
                         decoration-bf="1" />
+                        
                     <field name="tag_ids"
                         widget="many2many_tags"
                         options="{'color_field': 'color'}"
@@ -105,9 +107,9 @@
                     </sheet>
 
                     <div class="oe_chatter">
-                        <field name="message_follower_ids" />
-                        <field name="activity_ids" />
-                        <field name="message_ids" />
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
                     </div>
                 </form>
             </field>
