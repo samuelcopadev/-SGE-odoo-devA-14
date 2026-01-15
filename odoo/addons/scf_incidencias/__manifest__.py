@@ -2,14 +2,14 @@
 {
     'name': "scf_incidencias",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Gestor de incidencias completo y funcional",
 
     'description': """
 Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "Samuel Copa",
+    'website': "https://github.com/samuelcopadev/-SGE-odoo-devA-14",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
