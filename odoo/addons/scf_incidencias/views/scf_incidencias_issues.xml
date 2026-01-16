@@ -6,9 +6,9 @@
             <field name="name">scf.incidencias.issues.tree</field>
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
-                <tree string="Incidencia"
-                    decoration-muted="state == 'done'"
-                    sample="1">
+                <tree string="Incidencia" decoration-muted="state == 'done'" sample="1">
+                    
+                    <field name="activo_image" widget="image" options="{'size': [25, 25]}" string=" " optional="show"/>
 
                     <field name="priority"
                         widget="badge"
@@ -119,10 +119,7 @@
             <field name="name">scf.incidencias.issues.kanban</field>
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
-                <kanban default_group_by="state"
-                    records_draggable="1"
-                    sample="1">
-
+                <kanban default_group_by="state" records_draggable="1" sample="1">
                     <field name="id" />
                     <field name="name" />
                     <field name="priority" />
@@ -138,10 +135,7 @@
 
                                 <div class="d-flex mb-2">
                                     <div class="o_kanban_image me-2 flex-shrink-0">
-                                        <img t-att-src="kanban_image('scf_incidencias.issues', 'activo_image', record.id.raw_value)"
-                                             alt="Imagen Activo"
-                                             class="oe_avatar"
-                                             style="width: 45px; height: 45px;"/>
+                                        <field name="activo_image" widget="image" options="{'size': [45, 45]}" class="oe_avatar"/>
                                     </div>
 
                                     <div class="flex-grow-1">
