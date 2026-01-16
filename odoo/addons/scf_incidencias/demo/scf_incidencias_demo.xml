@@ -4,23 +4,39 @@
         <record id="user_ana" model="res.users">
             <field name="name">Ana Técnico</field>
             <field name="login">ana_t</field>
+            <field name="password">ana_t</field>
             <field name="email">ana@demo.com</field>
-            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="groups_id" eval="[(4, ref('scf_incidencias.group_incidencias_user'))]"/>
         </record>
 
         <record id="user_carlos" model="res.users">
             <field name="name">Carlos Redes</field>
             <field name="login">carlos_r</field>
+            <field name="password">carlos_r</field>
             <field name="email">carlos@demo.com</field>
-            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="groups_id" eval="[(4, ref('scf_incidencias.group_incidencias_user'))]"/>
         </record>
 
         <record id="user_luis" model="res.users">
             <field name="name">Luis Hardware</field>
             <field name="login">luis_h</field>
+            <field name="password">luis_h</field>
             <field name="email">luis@demo.com</field>
-            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="groups_id" eval="[(4, ref('scf_incidencias.group_incidencias_user'))]"/>
         </record>
+
+        <record id="user_marta" model="res.users">
+            <field name="name">Marta Jefa</field>
+            <field name="login">marta_j</field>
+            <field name="password">marta_j</field>
+            <field name="email">marta@demo.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user')), (4, ref('scf_incidencias.group_incidencias_manager'))]"/>
+        </record>
+
+        <record id="base.user_demo" model="res.users">
+            <field name="groups_id" eval="[(4, ref('scf_incidencias.group_incidencias_user'))]"/>
+        </record>
+
 
         <record id="tag_urgente" model="scf_incidencias.etiquetas">
             <field name="name">Urgente</field>

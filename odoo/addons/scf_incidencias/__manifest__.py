@@ -23,6 +23,7 @@ Long description of module's purpose
 
     # always loaded
     'data': [
+        'security/scf_incidencias_security.xml',
         'security/ir.model.access.csv',
         'views/scf_incidencias_issues.xml',
         'views/menus.xml',
