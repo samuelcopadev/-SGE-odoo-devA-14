@@ -28,7 +28,8 @@ Long description of module's purpose
         'views/menus.xml',
         'views/scf_incidencias_activos.xml',
         'views/scf_incidencias_intervenciones.xml',
-        'views/scf_incidencias_etiquetas.xml'
+        'views/scf_incidencias_etiquetas.xml',
+        'reports/scf_incidencias_reports.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
