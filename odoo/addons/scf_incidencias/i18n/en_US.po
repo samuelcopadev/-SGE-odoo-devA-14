@@ -1,0 +1,737 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* scf_incidencias
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-16 13:07+0000\n"
+"PO-Revision-Date: 2026-01-16 13:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_incidencia_template
+msgid ""
+"<br/>\n"
+"                                        <strong>Estado:</strong>"
+msgstr ""
+"<br/>\n"
+"                                        <strong>Status:</strong>"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_incidencia_template
+msgid ""
+"<br/>\n"
+"                                        <strong>Fecha Reporte:</strong>"
+msgstr ""
+"<br/>\n"
+"                                        <strong>Report Date:</strong>"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_incidencia_template
+msgid "<strong>Prioridad:</strong>"
+msgstr "<strong>Priority:</strong>"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_incidencia_template
+msgid "<strong>Total Horas: </strong>"
+msgstr "<strong>Total Hours: </strong>"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_needaction
+msgid "Action Needed"
+msgstr "Action Needed"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_ids
+msgid "Activities"
+msgstr "Activities"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activity Exception Decoration"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_state
+msgid "Activity State"
+msgstr "Activity State"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Activity Type Icon"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activo_form
+msgid "Activo"
+msgstr "Asset"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activo_id
+msgid "Activo Afectado"
+msgstr "Affected Asset"
+
+#. module: scf_incidencias
+#: model:ir.model,name:scf_incidencias.model_scf_incidencias_activos
+msgid "Activo Informático"
+msgstr "IT Asset"
+
+#. module: scf_incidencias
+#: model:ir.ui.menu,name:scf_incidencias.activos_menu
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activo_tree
+msgid "Activos"
+msgstr "Assets"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activos_search
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+msgid "Agrupar Por"
+msgstr "Group By"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_issues__priority__2
+msgid "Alta"
+msgstr "High"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_graph
+msgid "Análisis de Horas"
+msgstr "Hours Analysis"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_attachment_count
+msgid "Attachment Count"
+msgstr "Attachment Count"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_tree
+msgid "Añade una descripción breve..."
+msgstr "Add a brief description..."
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_issues__priority__0
+msgid "Baja"
+msgstr "Low"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activos_search
+msgid "Buscar Activos"
+msgstr "Search Assets"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_search
+msgid "Buscar Etiquetas"
+msgstr "Search Tags"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+msgid "Buscar Partes de Trabajo"
+msgstr "Search Work Logs"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__category
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activos_search
+msgid "Categoría"
+msgstr "Category"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_activos__name
+msgid "Codigo/Nombre del producto"
+msgstr "Product Code/Name"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__color
+msgid "Color"
+msgstr "Color"
+
+#. module: scf_incidencias
+#: model:ir.ui.menu,name:scf_incidencias.etiquetas_menu
+msgid "Configuración Etiquetas"
+msgstr "Tag Configuration"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Contexto"
+msgstr "Context"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__create_uid
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__create_uid
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__create_uid
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__create_date
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__create_date
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__create_date
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__name
+msgid "Código/Nombre"
+msgstr "Code/Name"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activo_form
+msgid "Datos Técnicos"
+msgstr "Technical Data"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activo_form
+msgid "Datos de Compra"
+msgstr "Purchase Data"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+msgid "Describe aquí todos los detalles técnicos..."
+msgstr "Describe all technical details here..."
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_form
+msgid "Describe para qué sirve esta etiqueta (opcional)..."
+msgstr "Describe the purpose of this tag (optional)..."
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__description
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__description
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_intervenciones_table
+msgid "Descripción"
+msgstr "Description"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+msgid "Descripción Detallada"
+msgstr "Detailed Description"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__description
+msgid "Descripción detallada"
+msgstr "Detailed description"
+
+#. module: scf_incidencias
+#: model:ir.actions.report,name:scf_incidencias.action_report_incidencia
+msgid "Detalle de Incidencia"
+msgstr "Issue Detail"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__description
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_form
+msgid "Detalles"
+msgstr "Details"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Detalles Técnicos"
+msgstr "Technical Details"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__display_name
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__display_name
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__display_name
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_intervenciones__time_spent
+msgid "Ej: 1.5"
+msgstr "e.g., 1.5"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Ej: Cambio de disco duro..."
+msgstr "e.g., Hard drive replacement..."
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+msgid "Ej: Pantalla rota..."
+msgstr "e.g., Broken screen..."
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_form
+msgid "Ej: Urgente, Wifi, VIP..."
+msgstr "e.g., Urgent, Wifi, VIP..."
+
+#. module: scf_incidencias
+#: model:ir.model.constraint,message:scf_incidencias.constraint_scf_incidencias_activos_serial_no_unique
+msgid ""
+"El número de serie debe ser único. Ya existe un activo registrado con este "
+"serial."
+msgstr ""
+"The serial number must be unique. There is already an asset registered with this serial."
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_issues__state__process
+msgid "En Proceso"
+msgstr "In Progress"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__state
+msgid "Estado"
+msgstr "Status"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_form
+msgid "Etiqueta"
+msgstr "Tag"
+
+#. module: scf_incidencias
+#: model:ir.actions.act_window,name:scf_incidencias.acciones_etiquetas
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__tag_ids
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_tree
+msgid "Etiquetas"
+msgstr "Tags"
+
+#. module: scf_incidencias
+#: model:ir.model,name:scf_incidencias.model_scf_incidencias_etiquetas
+msgid "Etiquetas de clasificación"
+msgstr "Classification Tags"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__date
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_intervenciones_table
+msgid "Fecha"
+msgstr "Date"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__purchase_date
+msgid "Fecha de Compra"
+msgstr "Purchase Date"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__date_reported
+msgid "Fecha de Reporte"
+msgstr "Report Date"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_follower_ids
+msgid "Followers"
+msgstr "Followers"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Followers (Partners)"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font awesome icon e.g. fa-tasks"
+
+#. module: scf_incidencias
+#: model:ir.module.category,name:scf_incidencias.module_category_scf_incidencias
+msgid "Gestión de Incidencias"
+msgstr "Issue Management"
+
+#. module: scf_incidencias
+#: model:ir.ui.menu,name:scf_incidencias.root_menu
+msgid "Gestor de Incidencias"
+msgstr "Issue Manager"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__has_message
+msgid "Has Message"
+msgstr "Has Message"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__time_spent
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_intervenciones_table
+msgid "Horas"
+msgstr "Hours"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+msgid "Hoy"
+msgstr "Today"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__id
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__id
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__id
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__id
+msgid "ID"
+msgstr "ID"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_exception_icon
+msgid "Icon"
+msgstr "Icon"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icon to indicate an exception activity."
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "If checked, new messages require your attention."
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__message_has_error
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "If checked, some messages have a delivery error."
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__image
+msgid "Imagen"
+msgstr "Image"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activo_image
+msgid "Imagen del Activo"
+msgstr "Asset Image"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_activos__category__printer
+msgid "Impresora"
+msgstr "Printer"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activos_search
+msgid "Impresoras"
+msgstr "Printers"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Imputación"
+msgstr "Log Entry"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__issue_id
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_tree
+msgid "Incidencia"
+msgstr "Issue"
+
+#. module: scf_incidencias
+#: model:ir.actions.act_window,name:scf_incidencias.acciones_issues
+#: model:ir.model,name:scf_incidencias.model_scf_incidencias_issues
+#: model:ir.ui.menu,name:scf_incidencias.issues_menu
+msgid "Incidencias"
+msgstr "Issues"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_incidencia_template
+msgid "Informe de Incidencia"
+msgstr "Issue Report"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__intervencion_ids
+#: model:ir.ui.menu,name:scf_incidencias.intervenciones_menu
+msgid "Intervenciones"
+msgstr "Interventions"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+msgid "Intervenciones / Horas"
+msgstr "Interventions / Hours"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_intervenciones_table
+msgid "Intervenciones Realizadas"
+msgstr "Interventions Performed"
+
+#. module: scf_incidencias
+#: model:ir.actions.act_window,name:scf_incidencias.acciones_activos
+msgid "Inventario de Activos"
+msgstr "Asset Inventory"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_is_follower
+msgid "Is Follower"
+msgstr "Is Follower"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__write_uid
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__write_uid
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__write_uid
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__write_date
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__write_date
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__write_date
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_issues__priority__1
+msgid "Media"
+msgstr "Medium"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+msgid "Mes"
+msgstr "Month"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_has_error
+msgid "Message Delivery error"
+msgstr "Message Delivery error"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+msgid "Mis Intervenciones"
+msgstr "My Interventions"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__model
+msgid "Modelo"
+msgstr "Model"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_activos__model
+msgid "Modelo del producto"
+msgstr "Product Model"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_activos__category__monitor
+msgid "Monitor"
+msgstr "Monitor"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "My Activity Deadline"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Next Activity Deadline"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_summary
+msgid "Next Activity Summary"
+msgstr "Next Activity Summary"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_type_id
+msgid "Next Activity Type"
+msgstr "Next Activity Type"
+
+#. module: scf_incidencias
+#: model:ir.module.category,description:scf_incidencias.module_category_scf_incidencias
+msgid "Niveles de acceso para técnicos y responsables."
+msgstr "Access levels for technicians and managers."
+
+#. module: scf_incidencias
+#. odoo-python
+#: code:addons/scf_incidencias/models/scf_incidencias_issues.py:0
+#, python-format
+msgid ""
+"No puedes marcar la incidencia como 'Resuelta' sin haber imputado horas de "
+"trabajo."
+msgstr "You cannot mark the issue as 'Resolved' without logging hours."
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.etiquetas_form
+msgid "Nombre de Etiqueta"
+msgstr "Tag Name"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_etiquetas__name
+msgid "Nombre de la Etiqueta"
+msgstr "Tag Name"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activo_form
+msgid "Nombre del Equipo"
+msgstr "Equipment Name"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__notes
+msgid "Notas"
+msgstr "Notes"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activo_form
+msgid "Notas y Observaciones"
+msgstr "Notes and Observations"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_issues__state__draft
+msgid "Nueva"
+msgstr "New"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Number of Actions"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_has_error_counter
+msgid "Number of errors"
+msgstr "Number of errors"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Number of messages requiring action"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Number of messages with delivery error"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_activos__serial_no
+msgid "Nº Serie"
+msgstr "Serial No."
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_activos__category__pc
+msgid "Ordenador / Portátil"
+msgstr "Computer / Laptop"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activos_search
+msgid "Ordenadores"
+msgstr "Computers"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_activos__category__other
+msgid "Otro"
+msgstr "Other"
+
+#. module: scf_incidencias
+#: model:ir.model,name:scf_incidencias.model_scf_incidencias_intervenciones
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Parte de Trabajo"
+msgstr "Work Log"
+
+#. module: scf_incidencias
+#: model:ir.actions.act_window,name:scf_incidencias.acciones_intervenciones
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_tree
+msgid "Partes de Trabajo"
+msgstr "Work Logs"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Pasos técnicos..."
+msgstr "Technical steps..."
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__priority
+msgid "Prioridad"
+msgstr "Priority"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_activos__category__network
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.activos_search
+msgid "Redes"
+msgstr "Networks"
+
+#. module: scf_incidencias
+#: model:res.groups,name:scf_incidencias.group_incidencias_manager
+msgid "Responsable (Manager)"
+msgstr "Manager"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__activity_user_id
+msgid "Responsible User"
+msgstr "Responsible User"
+
+#. module: scf_incidencias
+#: model:ir.model.fields.selection,name:scf_incidencias.selection__scf_incidencias_issues__state__done
+msgid "Resuelta"
+msgstr "Resolved"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_form
+msgid "Resumen del trabajo"
+msgstr "Work Summary"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS Delivery error"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.scf_incidencias_activos_kanban
+msgid "SN:"
+msgstr "SN:"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_tree
+msgid "Total Global"
+msgstr "Global Total"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__total_hours
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_tree
+msgid "Total Horas"
+msgstr "Total Hours"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+msgid "Total Visual"
+msgstr "Visual Total"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,help:scf_incidencias.field_scf_incidencias_issues__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type of the exception activity on record."
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__user_id
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__users_id
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.intervenciones_search
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.report_intervenciones_table
+msgid "Técnico"
+msgstr "Technician"
+
+#. module: scf_incidencias
+#: model:res.groups,name:scf_incidencias.group_incidencias_user
+msgid "Técnico (Usuario)"
+msgstr "Technician (User)"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_issues__name
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_tree
+msgid "Título"
+msgstr "Title"
+
+#. module: scf_incidencias
+#: model_terms:ir.ui.view,arch_db:scf_incidencias.issues_form
+msgid "Título de la incidencia"
+msgstr "Issue Title"
+
+#. module: scf_incidencias
+#: model:ir.model.fields,field_description:scf_incidencias.field_scf_incidencias_intervenciones__name
+msgid "Título del trabajo"
+msgstr "Work Title"
