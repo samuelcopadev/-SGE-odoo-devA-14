@@ -119,5 +119,17 @@
             </field>
         </record>
 
+        <record id="scf_incidencias.intervenciones_pivot" model="ir.ui.view">
+            <field name="name">scf.incidencias.intervenciones.pivot</field>
+            <field name="model">scf_incidencias.intervenciones</field>
+            <field name="arch" type="xml">
+                <pivot string="Análisis de Horas" display_quantity="true">
+                    <field name="user_id" type="row"/>
+                    <field name="date" interval="month" type="col"/>
+                    <field name="time_spent" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
     </data>
 </odoo>

@@ -180,5 +180,22 @@
             </field>
         </record>
 
+        <record id="scf_incidencias.issues_activity" model="ir.ui.view">
+            <field name="name">scf.incidencias.issues.activity</field>
+            <field name="model">scf_incidencias.issues</field>
+            <field name="arch" type="xml">
+                <activity string="Actividades de Incidencias">
+                    <templates>
+                        <div t-name="activity-box">
+                            <div>
+                                <field name="name" display="full"/>
+                                <field name="users_id" muted="1" display="full"/>
+                            </div>
+                        </div>
+                    </templates>
+                </activity>
+            </field>
+        </record>
+
     </data>
 </odoo>
