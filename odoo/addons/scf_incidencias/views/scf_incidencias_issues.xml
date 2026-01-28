@@ -115,7 +115,7 @@
             </field>
         </record>
 
-        <record id="scf_incidencias_issues_kanban" model="ir.ui.view">
+        <record id="scf_incidencias.issues_kanban" model="ir.ui.view">
             <field name="name">scf.incidencias.issues.kanban</field>
             <field name="model">scf_incidencias.issues</field>
             <field name="arch" type="xml">
