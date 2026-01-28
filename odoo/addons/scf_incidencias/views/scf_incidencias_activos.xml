@@ -94,7 +94,7 @@
                     <field name="id" />
                     <field name="name" />
                     <field name="model" />
-                    <field name="image" />
+                    <field name="image" options="{'preview_image': 'image'}"/>
                     <field name="category" />
                     <field name="serial_no" />
 

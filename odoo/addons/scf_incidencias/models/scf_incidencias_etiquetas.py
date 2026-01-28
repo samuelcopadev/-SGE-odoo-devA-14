@@ -8,6 +8,5 @@ class ScfIncidenciasEtiquetas(models.Model):
     name = fields.Char(string='Nombre de la Etiqueta', required=True)
     description = fields.Text(string='Descripción')
     
-    # Este entero es usado por el widget 'many2many_tags' en el XML.
-    # Odoo mapea el número (0-11) a una paleta de colores predefinida en CSS.
+    # Índice de color (0-11) para el widget many2many_tags_avatar
     color = fields.Integer(string='Color')
