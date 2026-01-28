@@ -23,8 +23,7 @@ class ScfIncidenciasActivo(models.Model):
     purchase_date = fields.Date(string="Fecha de Compra")
     notes = fields.Text(string="Notas")
 
-    # Restricción SQL para garantizar integridad de datos:
-    # Impide crear dos activos con el mismo número de serie a nivel de Base de Datos.
+    # Garantizar unicidad física del activo
     _sql_constraints = [
         (
             'serial_no_unique', 
