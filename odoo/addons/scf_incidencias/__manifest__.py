@@ -30,6 +30,7 @@ Long description of module's purpose
         'views/scf_incidencias_activos.xml',
         'views/scf_incidencias_intervenciones.xml',
         'views/scf_incidencias_etiquetas.xml',
+        'views/res_users.xml',
         'reports/scf_incidencias_report.xml',
         'reports/scf_incidendcias_report_tempate.xml'
     ],
