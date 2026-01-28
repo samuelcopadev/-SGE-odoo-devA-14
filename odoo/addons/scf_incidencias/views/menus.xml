@@ -5,7 +5,7 @@
         <record id="scf_incidencias.acciones_issues" model="ir.actions.act_window">
             <field name="name">Incidencias</field>
             <field name="res_model">scf_incidencias.issues</field>
-            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_mode">tree,form,kanban,calendar</field>
         </record>
 
         <record id="scf_incidencias.acciones_activos" model="ir.actions.act_window">

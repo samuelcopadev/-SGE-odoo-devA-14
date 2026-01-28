@@ -168,5 +168,17 @@
             </field>
         </record>
 
+        <record id="scf_incidencias.issues_calendar" model="ir.ui.view">
+            <field name="name">scf.incidencias.issues.calendar</field>
+            <field name="model">scf_incidencias.issues</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de Incidencias" date_start="date_reported" color="users_id" mode="month">
+                    <field name="name"/>
+                    <field name="users_id"/>
+                    <field name="state"/>
+                </calendar>
+            </field>
+        </record>
+
     </data>
 </odoo>
