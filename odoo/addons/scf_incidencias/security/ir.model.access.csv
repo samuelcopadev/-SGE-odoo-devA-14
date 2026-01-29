@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_scf_incidencias_especialista,scf_incidencias.especialista,model_scf_incidencias_especialista,base.group_user,1,1,1,1
 scf_incidencias.issues_basic_user,scf_incidencias.issues_basic_user,model_scf_incidencias_issues,scf_incidencias.group_incidencias_user,1,1,1,0
 scf_incidencias.activos_basic_user,scf_incidencias.activos_basic_user,model_scf_incidencias_activos,scf_incidencias.group_incidencias_user,1,1,1,0
 scf_incidencias.intervenciones_basic_user,scf_incidencias.intervenciones_basic_user,model_scf_incidencias_intervenciones,scf_incidencias.group_incidencias_user,1,1,1,0
