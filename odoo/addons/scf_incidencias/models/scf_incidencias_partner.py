@@ -3,7 +3,7 @@ from odoo import models, fields
 
 class Especialista(models.Model):
     _name = 'scf_incidencias.especialista'
-    _inherit = 'res.partner'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Especialista Técnico Externo'
 
     nivel = fields.Selection([
