@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="scf_incidencias.issues_report" model="ir.actions.report">
+            <field name="name">Detalle de Incidencia</field>
+            <field name="model">scf_incidencias.issues</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">scf_incidencias.report_incidencia_template</field>
+            <field name="report_file">scf_incidencias.report_incidencia_template</field>
+            <field name="binding_model_id" ref="model_scf_incidencias_issues"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>
