@@ -21,6 +21,7 @@
     'data': [
         'security/scf_incidencias_security.xml',
         'security/ir.model.access.csv',
+        'views/scf_incidencias_especialista.xml',
         'views/scf_incidencias_issues.xml',
         'views/menus.xml',
         'views/scf_incidencias_activos.xml',
@@ -32,6 +33,7 @@
     ],
     'demo': [
         'demo/scf_incidencias_demo.xml',
+        'demo/scf_incidencias_especialista_demo.xml',
     ],
     'application': True,
 }
