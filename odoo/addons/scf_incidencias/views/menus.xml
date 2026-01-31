@@ -53,6 +53,13 @@
             sequence="3" />
 
         <menuitem
+            id="scf_incidencias.especialistas_menu"
+            name="Especialistas"
+            parent="scf_incidencias.root_menu"
+            action="scf_incidencias.scf_incidencias_especialista_action"
+            sequence="4" />
+
+        <menuitem
             id="scf_incidencias.etiquetas_menu"
             name="Configuración Etiquetas"
             parent="scf_incidencias.root_menu"

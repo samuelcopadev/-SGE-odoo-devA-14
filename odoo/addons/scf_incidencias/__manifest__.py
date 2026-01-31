@@ -21,6 +21,7 @@
     'data': [
         'security/scf_incidencias_security.xml',
         'security/ir.model.access.csv',
+        'views/scf_incidencias_especialista.xml',
         'views/scf_incidencias_issues.xml',
         'views/menus.xml',
         'views/scf_incidencias_activos.xml',

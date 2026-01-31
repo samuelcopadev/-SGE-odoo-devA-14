@@ -196,5 +196,27 @@
             ]"/>
         </record>
 
+
+        <!-- Especialista Junior -->
+        <record id="especialista_alberto" model="scf_incidencias.especialista">
+            <field name="name">Alberto Junior</field>
+            <field name="nivel">junior</field>
+            <field name="certificaciones">Curso Básico Python</field>
+        </record>
+
+        <!-- Especialista Senior -->
+        <record id="especialista_beatriz" model="scf_incidencias.especialista">
+            <field name="name">Beatriz Senior</field>
+            <field name="nivel">senior</field>
+            <field name="certificaciones">CCNA, Odoo Developer v16</field>
+        </record>
+
+        <!-- Especialista Master -->
+        <record id="especialista_carlos" model="scf_incidencias.especialista">
+            <field name="name">Carlos Master</field>
+            <field name="nivel">master</field>
+            <field name="certificaciones">AWS Solutions Architect, Odoo Expert, CyberSecurity Pro</field>
+        </record>
+
     </data>
 </odoo>

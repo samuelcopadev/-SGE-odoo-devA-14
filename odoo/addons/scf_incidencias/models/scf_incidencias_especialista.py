@@ -6,6 +6,8 @@ class Especialista(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Especialista Técnico Externo'
 
+    name = fields.Char(string="Nombre Completo", required=True)
+    
     nivel = fields.Selection([
         ('junior', 'Junior'),
         ('senior', 'Senior'),

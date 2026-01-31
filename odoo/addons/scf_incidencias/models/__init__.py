@@ -5,4 +5,4 @@ from . import scf_incidencias_activos
 from . import scf_incidencias_intervenciones
 from . import scf_incidencias_etiquetas
 from . import res_users
-from . import scf_incidencias_partner
+from . import scf_incidencias_especialista
