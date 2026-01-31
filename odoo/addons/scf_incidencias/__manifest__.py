@@ -33,7 +33,6 @@
     ],
     'demo': [
         'demo/scf_incidencias_demo.xml',
-        'demo/scf_incidencias_especialista_demo.xml',
     ],
     'application': True,
 }
