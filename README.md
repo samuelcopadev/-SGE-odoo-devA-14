@@ -1,138 +1,189 @@
-# Introducción
+# 🛠️ SCF Incidencias - Gestión de Soporte IT para Odoo 17
 
-Proyecto final SGE con Odoo, Docker, Docker Compose, Git y GitHub.
+![Odoo Version](https://img.shields.io/badge/Odoo-17.0-purple?style=for-the-badge&logo=odoo)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
+![Docker](https://img.shields.io/badge/Docker-Compose-green?style=for-the-badge&logo=docker)
+![Status](https://img.shields.io/badge/Status-Stable-success?style=for-the-badge)
 
-- [Introducción](#introducción)
-- [Preparación del repo y del entorno](#preparación-del-repo-y-del-entorno)
-  - [_Fork_ del repositorio original](#fork-del-repositorio-original)
-  - [Creación de rama de desarrollo y clonación del repositorio en local](#creación-de-rama-de-desarrollo-y-clonación-del-repositorio-en-local)
-  - [Instalación de extensiones útiles](#instalación-de-extensiones-útiles)
-  - [Inicialización de Odoo y creación de la primera base de datos](#inicialización-de-odoo-y-creación-de-la-primera-base-de-datos)
-  - [Primer _commit_](#primer-commit)
-  - [Comando _odoo scaffold_](#comando-odoo-scaffold)
-- [Próximos pasos...](#próximos-pasos)
+## 📖 Descripción del Proyecto
 
-# Preparación del repo y del entorno
+**SCF Incidencias** es un módulo vertical desarrollado para Odoo 17 que digitaliza y automatiza el departamento de **Soporte Técnico (Helpdesk)**. 
 
-## _Fork_ del repositorio original
+Este proyecto profesionaliza la gestión de tickets integrando inventario de activos (CMDB), control de tiempos, gestión de especialistas externos y reporting avanzado. El sistema incluye lógica de negocio personalizada para garantizar la calidad del dato y la eficiencia operativa.
 
-Inicia sesión en tu cuenta de GitHub, haz un _fork_ de [javnitram/SGE-odoo-it-yourself](https://github.com/javnitram/SGE-odoo-it-yourself) y llama al tuyo SGE-odoo-dev**Z**-**XX**, donde **Z** es la **letra de tu grupo (A, B, V)** y **XX** es el valor correspondiente a tu número de puesto, según **los dígitos del hostname de clase**.
+---
 
-![Fork](https://github.com/user-attachments/assets/a384ed5f-e5aa-4ba2-90ae-f78e09338793)
+## ✨ Características Funcionales
 
-## Creación de rama de desarrollo y clonación del repositorio en local
+### 🎫 Gestión Inteligente de Tickets
+- **Workflow de Estados:** Ciclo de vida definido (`Nueva` > `En Proceso` > `Resuelta`) gestionado mediante barra de estado interactiva.
+- **Priorización Automática:** El sistema eleva la prioridad automáticamente a "Alta" si el activo afectado es crítico (ej: Servidores o Redes).
+- **Validación de Calidad:** Restricción de código (`Python Constraint`) que impide cerrar una incidencia si el técnico no ha imputado las horas trabajadas.
+- **Vistas Avanzadas:** Kanban visual, Calendario de planificación y Panel de Actividades.
 
-En tu repositorio, además de tener una rama _main_ o _master_, crea una rama con nombre **develop**. Esta será tu rama de desarrollo.
+### 🖥️ Inventario y Trazabilidad (CMDB)
+- **Activos IT:** Inventario detallado con fotos reales de los equipos.
+- **Integridad de Datos:** Validación SQL (`_sql_constraints`) que impide la duplicidad de Números de Serie.
+- **Historial:** Vinculación directa Incidencia-Activo para trazar averías recurrentes.
 
-![Branch](https://github.com/user-attachments/assets/6ff047cd-3375-4685-a536-d6e0e557cab1)
+### ⏱️ Control de Tiempos
+- **Partes de Trabajo:** Registro granular de intervenciones por técnico y fecha.
+- **Cálculo Automático:** El campo `total_hours` se calcula dinámicamente sumando las intervenciones, eliminando errores manuales.
 
-Vas a usar esa rama para desarrollar tu propio módulo de Odoo. Para ello, deberás clonar la rama en local con Visual Studio Code.
+### 👨‍💻 Gestión de Especialistas
+- **RRHH Externo:** Gestión de perfiles técnicos externos y certificaciones (`Junior`, `Senior`, `Master`).
+- **Integración Social:** Uso de `mail.thread` para gestión documental (CVs, contratos) en la ficha del especialista.
 
-Primero, si no lo has hecho anteriormente, deberás autorizar el acceso a GitHub desde Visual Studio Code.
+### 📊 Informes y Business Intelligence
+- **Reportes PDF:** Generación de partes de trabajo con motor **QWeb**, incluyendo desglose de horas y firma.
+- **Dashboard:** Vistas de Gráfico y Tabla Dinámica (Pivot) para análisis de carga de trabajo.
 
-![Autorizar GitHub en Visual Studio Code](https://user-images.githubusercontent.com/1954675/214658283-2563168c-9a89-4950-b5d8-3b492c748d0a.gif)
+---
 
-A continuación, clona el repositorio (es posible que GitHub te pida autorizar permisos adicionales)
+## 🏗️ Arquitectura Técnica (Memoria de Desarrollo)
 
-![Git Clone](https://user-images.githubusercontent.com/1954675/214662378-484a9aaa-1be2-4ded-ac78-b3b997bc2fb7.gif)
+El módulo sigue estrictamente el patrón MVC (Modelo-Vista-Controlador) de Odoo.
 
-Asegúrate de estar apuntando a la rama de desarrollo: **develop**
+### 🧩 Diagrama de Clases (Modelo de Datos)
 
-![Checkout](https://user-images.githubusercontent.com/1954675/214665198-03e8f2b6-670c-4384-9ced-557ea86e6632.gif)
+```mermaid
+classDiagram
+    class Issues {
+        +Char name
+        +Selection state
+        +Selection priority
+        +Float total_hours
+        +compute_total_hours()
+        +check_closing_conditions()
+    }
+    class Activos {
+        +Char name
+        +Char serial_no
+        +Selection category
+        +Binary image
+        _sql_constraints_unique_serial()
+    }
+    class Intervenciones {
+        +Datetime date
+        +Float time_spent
+        +Text description
+    }
+    class ResUsers {
+        +Boolean x_is_technician
+    }
+    class Etiquetas {
+        +Char name
+        +Integer color
+    }
 
-Considera guardar tu workspace (área de trabajo) de Visual Studio Code.
+    Issues "1" --> "*" Intervenciones : One2many (Composition)
+    Issues "*" --> "1" Activos : Many2one (Link)
+    Issues "*" --> "1" ResUsers : Many2one (Assigned To)
+    Issues "*" -- "*" Etiquetas : Many2many (Tags)
+    Intervenciones "*" --> "1" ResUsers : Many2one (Performed By)
+```
 
-## Instalación de extensiones útiles
-
-A diferencia de anteriores proyectos basados en el repo [javnitram/SGE-odoo-dockerized](https://github.com/javnitram/SGE-odoo-dockerized), en esta última entrega, vamos a prescindir de pgAdmin 4 y del script que usábamos para gestionar Docker Compose. En su lugar, hay que usar las extensiones oportunas de Visual Studio Code. Busca por estos identificadores, de modo que por cada uno encontrarás exactamente una extensión para instalar:
-
-- ```jigar-patel.OdooSnippets```
-- ```ms-python.python```
-- ```ms-azuretools.vscode-Docker```
-- ```ckolkman.vscode-postgres```
-
-Tras instalar estas extensiones, obtendrás nuevas funciones en Visual Studio Code, a las cuales puedes acceder rápidamente desde la paleta de comandos con el atajo ```Control + Shift + P```. Asimismo, también podrás observar dos nuevos iconos en la barra de actividad (a la izquierda), uno correspondiente a la extensión de Docker y otro a la de PostgreSQL, nos familiarizaremos con ellas durante las demostraciones en clase.
-
-![Iconos barra lateral](https://user-images.githubusercontent.com/1954675/214654250-62f53d6f-4200-4bf4-89fb-b20d320a1f95.gif)
-
-## Inicialización de Odoo y creación de la primera base de datos
-
-![Inicialización de Odoo](https://user-images.githubusercontent.com/1954675/214669540-193c94c0-81d8-451e-9cac-f8a8c3a03afd.gif)
-
-Lanza los contenedores usando la extensión de Docker en Visual Studio. Desde la propia extensión puedes lanzar también tu navegador por defecto para conectar al servicio Odoo en su puerto expuesto.
-
-Crea tu base de datos de Odoo con la configuración que consideres oportuna.
-
-![Primera base de datos Odoo](https://user-images.githubusercontent.com/1954675/214677032-1a1958ef-8f9e-4942-9cdf-8a09673c50b5.png)
-
-Como recuerdas de anteriores prácticas, es razonable que en ocasiones tengas problemas para acceder desde la máquina anfitriona a ficheros creados desde un contenedor (o viceversa). Cuando haya importantes cambios en el contenido de los volúmenes compartidos entre host y contenedores, ejecuta ```./set_permissions.sh```.
-
-Dicho script te orientará para que arranques los contenedores y vuelvas a invocarlo si es el único modo de recuperar el acceso completo. Esto es necesario en aquellos equipos Linux en los que no podemos ser root ni ejecutar sudo.
-
-## Primer _commit_
-
-Al iniciar Odoo por primera vez y configurar nuestra primera base de datos, hemos asignado una _master password_. Como recuerdas, esta contraseña queda cifrada en el fichero de configuración ```odoo.conf```, que también se ha actualizado para eliminar comentarios. Todo esto hace que Git detecte que el fichero ha sido modificado respecto a su contenido previo. Puedes observar cómo el fichero queda en estado **M** (_Modified_, modificado) y comparar las diferencias producidas en la modificación.
-
-![Odoo conf modificado y diff](https://user-images.githubusercontent.com/1954675/214678982-2358dff2-57ab-47ed-a57d-6371750c886d.png)
-
-En Git, los estados de un archivo son:
-
-- **U (Untracked)**: El archivo no está siendo rastreado por Git (nuevo y aún no agregado al repositorio).
-- **A (Added)**: El archivo ha sido agregado al área de preparación (staging area) con `git add` pero aún no confirmado (committed).
-- **M (Modified)**: El archivo ha sido modificado desde el último commit, pero no se ha agregado al área de preparación o está modificado en staging.
-- **D (Deleted)**: El archivo ha sido eliminado y Git ha detectado este cambio.
-
-Estos estados reflejan las diferencias entre el repositorio, el área de preparación y el sistema de archivos local.
-
-Este repositorio está configurado para sincronizar únicamente código y configuración, por lo que ningún _commit_ hará un _backup_ del estado de tu servidor Odoo ni del servidor de base de datos. Recuerda que un sistema de control de versiones no está para esas cosas y, por eso, se han configurado reglas específicas en ficheros _.gitignore_ en algunos directorios.
-
+### 📂 Estructura del Proyecto
 ```text
-.vscode
-# Python byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Backups and sql dump files
-*.sql
-*.tgz
-*.tar.gz
-*.zip
+scf_incidencias/
+├── __init__.py
+├── __manifest__.py                   # Descriptor y dependencias (base, mail)
+├── demo/
+│   └── scf_incidencias_demo.xml      # Escenarios de prueba y usuarios demo
+├── i18n/
+│   ├── en_US.po                      # Traducción completa al Inglés
+│   └── scf_incidencias.pot           # Plantilla de traducción
+├── models/                           # Lógica de Negocio (Backend)
+│   ├── __init__.py
+│   ├── res_users.py                  # Herencia (Inheritance)
+│   ├── scf_incidencias_activos.py    # CMDB + SQL Constraints
+│   ├── scf_incidencias_especialista.py
+│   ├── scf_incidencias_etiquetas.py
+│   ├── scf_incidencias_intervenciones.py
+│   └── scf_incidencias_issues.py     # Core Logic + Computed Fields
+├── reports/                          # Motor de Reporting (QWeb)
+│   ├── scf_incidencias_report.xml
+│   └── scf_incidendcias_report_tempate.xml
+├── security/                         # Control de Acceso (RBAC)
+│   ├── ir.model.access.csv           # Matriz de permisos (ACLs)
+│   └── scf_incidencias_security.xml  # Definición de Grupos
+├── static/                           # Recursos Estáticos
+│   ├── description/
+│   │   └── icon.png                  # Icono del módulo
+│   └── img/                          # Imágenes de activos demo
+│       ├── brother.jpg
+│       ├── servidor.jpg
+│       └── ...
+└── views/                            # Interfaz de Usuario (XML)
+    ├── menus.xml
+    ├── res_users.xml
+    ├── scf_incidencias_activos.xml
+    ├── scf_incidencias_especialista.xml
+    ├── scf_incidencias_etiquetas.xml
+    ├── scf_incidencias_intervenciones.xml
+    └── scf_incidencias_issues.xml
 ```
 
-Haz tu primer _commit_ (esto es confirmar los cambios en el repositorio local de Git) y _push_ (sincronizar cambios locales hacia el repositorio remoto, en este caso GitHub).
+### 🔐 Seguridad y Roles (ACLs)
+Se ha implementado un modelo de seguridad robusto para proteger la integridad de los datos:
 
-Es posible que la primera vez debas configurar tu nombre de usuario y dirección de correo electrónico. Esto es importante porque cada Git commit utiliza esta información para firjarla de forma inmutable en los commits que empiezas a crear:
+| Rol | Grupo XML | Permisos | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Técnico** | `group_incidencias_user` | Leer, Crear, Editar | Gestión diaria. **Bloqueo de borrado** (`unlink=0`) para evitar pérdida de historial. |
+| **Responsable** | `group_incidencias_manager` | Control Total (CRUD) | Administración, borrado de registros y configuración de maestros. |
 
-```
-git config --global user.name "John Doe"
-git config --global user.email johndoe.example.com
-```
+---
 
-Podemos hacer esta configuración sólo una vez si pasamos la opción --global, para que Git siempre use esa información para cualquier cosa que haga en ese sistema. Si deseas anular esto con un nombre o dirección de correo electrónico diferente para proyectos específicos, puedes ejecutar el comando sin la opción ```--global``` cuando estés en ese proyecto.
+## 🚀 Guía de Instalación y Despliegue
 
-Muchas de las herramientas GUI te ayudarán a hacer esto cuando las ejecutes por primera vez.
+El entorno se basa en Docker Compose para garantizar la reproducibilidad entre desarrollo y producción.
 
-## Comando _odoo scaffold_
+### Requisitos
+* Docker Engine & Docker Compose
+* Git
 
-Usando la extensión de Docker de Visual Studio Code, localiza la función que te permita abrir una shell en el contenedor de Odoo.
+### Pasos de Despliegue
+1.  **Clonar repositorio:**
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd SGE-odoo-devA-14
+    ```
+2.  **Iniciar contenedores:**
+    ```bash
+    docker compose up -d
+    ```
+3.  **Acceso Web:** Entrar en `http://localhost:8069`.
+    * *Nota:* Al crear la BD, marcar **"Demo Data"** para cargar los datos de prueba.
+4.  **Instalación:** Activar "Modo Desarrollador", actualizar lista de Apps e instalar `scf_incidencias`.
 
-Dentro del contenedor, ejecuta:
+---
 
-```bash
-odoo scaffold prueba /mnt/extra-addons
-```
+## 🧪 Testing y Escenarios
 
-![odoo scaffold](https://user-images.githubusercontent.com/1954675/214684898-0bcdea9c-887e-4224-aba1-7e842a223883.gif)
+El módulo viene pre-cargado (`demo.xml`) con imágenes reales y usuarios configurados para probar los roles de seguridad:
 
-Observa el contenido de ese directorio desde el propio contenedor y desde el volumen mapeado en el anfitrión. Este comando ha generado una estructura mínima de directorios y ficheros para agilizar el desarrollo de un módulo en Odoo. Explora el contenido del directorio _prueba_ desde Visual Studio Code, si tienes algún problema para modificar los ficheros, recuerda ejecutar ```./set_permissions.sh```.
+| Usuario | Contraseña | Rol | Prueba Recomendada |
+| :--- | :--- | :--- | :--- |
+| `ana_t` | `ana_t` | **Técnico** | Intentar borrar una incidencia (El sistema debe bloquearlo). |
+| `marta_j` | `marta_j` | **Responsable** | Generar un informe PDF y eliminar tickets antiguos. |
 
-# Próximos pasos...
+---
 
-Crea tu propio módulo de Odoo de acuerdo a los apuntes de clase y al enunciado de la práctica que se te ha proporcionado en el aula virtual.
+## 📸 Galería de Vistas
 
-Debes utilizar Git y GitHub. Para ello, se espera que hagas varios _commits_ y _pushes_ en tu rama de desarrollo y finalmente hagas un _merge_ a tu rama _main_ cuando hayas desarrollado y probado tu módulo.
+### Tablero Kanban
+![Vista Kanban](scf_incidencias/static/description/kanban_screenshot.png)
+> Gestión visual del flujo de trabajo con indicadores de color por estado.
 
-Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un _export_ de la base de datos con ```pg_dump``` o alguna utilidad gráfica.
+### Informe PDF (QWeb)
+![Reporte PDF](scf_incidencias/static/description/pdf_screenshot.png)
+> Parte de trabajo generado dinámicamente listo para imprimir.
 
-Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y todos los otros que hayan quedado integrados.
+---
+
+## 👤 Autor
+
+**Samuel Copa Flor**
+* **Curso:** Desarrollo de Aplicaciones Multiplataforma (DAM)
+* **Asignatura:** Sistemas de Gestión Empresarial (SGE)
+* **Año:** 2025/2026
