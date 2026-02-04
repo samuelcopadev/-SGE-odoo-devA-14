@@ -162,7 +162,8 @@ El entorno se basa en Docker Compose para garantizar la reproducibilidad entre d
 
 El módulo viene pre-cargado (`demo.xml`) con imágenes reales y usuarios configurados para probar los roles de seguridad:
 
-| Usuario | Contraseña | Rol | Prueba Recomendada |
+| Usuario | Contraseña | Rol | Prueba Recomendada |n
+
 | :--- | :--- | :--- | :--- |
 | `ana_t` | `ana_t` | **Técnico** | Intentar borrar una incidencia (El sistema debe bloquearlo). |
 | `marta_j` | `marta_j` | **Responsable** | Generar un informe PDF y eliminar tickets antiguos. |
@@ -172,11 +173,11 @@ El módulo viene pre-cargado (`demo.xml`) con imágenes reales y usuarios config
 ## 📸 Galería de Vistas
 
 ### Tablero Kanban
-![Vista Kanban](scf_incidencias/static/description/kanban_screenshot.png)
+![Vista Kanban](odoo/addons/scf_incidencias/static/description/kanban_screenshot.png)
 > Gestión visual del flujo de trabajo con indicadores de color por estado.
 
 ### Informe PDF (QWeb)
-![Reporte PDF](scf_incidencias/static/description/pdf_screenshot.png)
+![Reporte PDF](odoo/addons/scf_incidencias/static/description/pdf_screenshot.png)
 > Parte de trabajo generado dinámicamente listo para imprimir.
 
 ---
